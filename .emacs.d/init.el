@@ -61,7 +61,7 @@
 (global-set-key "\M-o" 'other-window)
 (global-set-key "\M-i" 'back-window)
 (global-set-key "\C-z" 'zap-to-char)
-(global-set-key "\C-h" 'backward-delete-char)
+;(global-set-key "\C-h" 'backward-delete-char)
 (global-set-key "\M-d" 'delete-word)
 (global-set-key "\M-h" 'backward-delete-word)
 (global-set-key "\M-u" 'zap-to-char)
@@ -75,3 +75,125 @@
 (require 'jade-mode)    
 (add-to-list 'auto-mode-alist '("\\.styl$" . sws-mode))
 (add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
+
+
+
+;; ------------------------------ 
+;; -- my stuff: toggle comment --
+;; ------------------------------
+(defun toggle-comment-on-line ()
+  "comment or uncomment current line"
+  (interactive)
+  (comment-or-uncomment-region (line-beginning-position) (line-end-position)))
+(global-set-key "\C-\\" 'toggle-comment-on-line)
+
+
+;; ------------------------------ 
+;; -- my stuff: never use tabs --
+;; ------------------------------
+;; I hate tabs!
+(setq-default indent-tabs-mode nil)
+
+
+;; ------------------------------ 
+;; -- my stuff: show full path --
+;; ------------------------------
+;; show full path
+(defun show-file-name ()
+  "Show the full path file name in the minibuffer."
+  (interactive)
+  (message (buffer-file-name)))
+
+
+;; -------------------------------- 
+;; -- my stuff: multiple cursors --
+;; --------------------------------
+(require 'multiple-cursors)
+
+;; Then you have to set up your keybindings - multiple-cursors doesn't presume to
+;; know how you'd like them laid out. Here are some examples:
+
+;; When you have an active region that spans multiple lines, the following will
+;; add a cursor to each line:
+
+;;     (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+
+;; When you want to add multiple cursors not based on continuous lines, but based on
+;; keywords in the buffer, use:
+
+(global-set-key (kbd "M->") 'mc/mark-next-like-this)
+(global-set-key (kbd "M-<") 'mc/mark-previous-like-this)
+;; (global-set-key (kbd "M-<") 'mc/mark-all-like-this)
+
+;; --------------------------------
+;; -- my stuff: autoload buffers --
+;; --------------------------------
+;; auto load all buffer in case of disk changes
+;; (global-auto-revert-mode t)
+
+(global-set-key [f5] (lambda () (interactive) (revert-buffer nil t)))
+
+
+;; -----------------------
+;; -- my stuff: phplint --
+;; -----------------------
+;; run php lint when press f8 key
+;; php lint
+(defun phplint-thisfile ()
+(interactive)
+(compile (format "php -l %s" (buffer-file-name))))
+(add-hook 'php-mode-hook
+'(lambda ()
+(local-set-key [f8] 'phplint-thisfile)))
+;; end of php lint
+
+
+;; ---------------------
+;; -- my stuff: theme --
+;; ---------------------
+;; (load-theme 'misterioso)
+
+;; ------------------------
+;; -- my stuff: add repo --
+;; ------------------------
+(require 'package)
+(add-to-list 'package-archives
+  '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
+
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/") t)
+
+;; ---------------------------- 
+;; -- my stuff: closed files --
+;; ----------------------------
+;; recent closed files
+;; http://stackoverflow.com/questions/2227401/how-to-get-a-list-of-last-closed-files-in-emacs
+
+(defvar closed-files (list))
+
+(defun track-closed-file ()
+  (message buffer-file-name)
+  (and buffer-file-name
+       (add-to-list 'closed-files buffer-file-name)))
+
+(defun last-closed-files ()
+  (interactive)
+  (find-file (ido-completing-read "Last closed: " closed-files)))
+
+(add-hook 'kill-buffer-hook 'track-closed-file)
+
+;; -------------------------
+;; -- my stuff: tree view --
+;; -------------------------
+(require 'tree-mode)
+(require 'windata)
+(require 'dirtree)
+(autoload 'dirtree "dirtree" "Add directory to tree view" t)
+(global-set-key "\C-o" 'dirtree-show)
+
+
+;; --------------------------------
+;; -- my stuff: find in git repo --
+;; --------------------------------
+(global-set-key (kbd "C-x f") 'find-file-in-repository)
