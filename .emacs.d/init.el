@@ -197,3 +197,9 @@
 ;; -- my stuff: find in git repo --
 ;; --------------------------------
 (global-set-key (kbd "C-x f") 'find-file-in-repository)
+
+
+;; ------------------------------------
+;; -- my stuff: save desktop on exit --
+;; ------------------------------------
+(desktop-save-mode 1)
