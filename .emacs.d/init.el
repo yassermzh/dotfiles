@@ -77,6 +77,17 @@
 (add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
 
 
+;; ------------------------
+;; -- my stuff: add repo --
+;; ------------------------
+(require 'package)
+(add-to-list 'package-archives
+  '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
+
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(package-initialize)
 
 ;; ------------------------------ 
 ;; -- my stuff: toggle comment --
@@ -153,16 +164,6 @@
 ;; ---------------------
 ;; (load-theme 'misterioso)
 
-;; ------------------------
-;; -- my stuff: add repo --
-;; ------------------------
-(require 'package)
-(add-to-list 'package-archives
-  '("melpa" . "http://melpa.milkbox.net/packages/") t)
-
-
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/") t)
 
 ;; ---------------------------- 
 ;; -- my stuff: closed files --
