@@ -204,3 +204,23 @@
 ;; -- my stuff: save desktop on exit --
 ;; ------------------------------------
 (desktop-save-mode 1)
+
+
+;; ------------------------------------                                                                                                                    
+;; -- my stuff: auto-complete-mode - --                                                                                                                    
+;; ------------------------------------                                                                                                                    
+;; http://blog.deadpansincerity.com/2011/05/setting-up-emacs-as-a-javascript-editing-environment-for-fun-and-profit/                                       
+;; cd path/to/auto-complete/dict                                                                                                                           
+;; ln -s javascript-mode js-mode                                                                                                                           
+; Load the default configuration                                                                                                                           
+(require 'auto-complete-config)
+; Make sure we can find the dictionaries                                                                                                                   
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-20140618.2217/dict")                                                                
+; Use dictionaries by default                                                                                                                              
+(setq-default ac-sources (add-to-list 'ac-sources 'ac-source-dictionary))                                                                                  
+(global-auto-complete-mode t)
+; Start auto-completion after 2 characters of a word                                                                                                       
+(setq ac-auto-start 2)
+; case sensitivity is important when finding matches                                                                                                       
+(setq ac-ignore-case nil)
+
