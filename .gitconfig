@@ -1,0 +1,56 @@
+[alias]
+
+        # From http://durdn.com/blog/2012/11/22/must-have-git-aliases-advanced-examples/
+
+        ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+        ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+        lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
+        lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+        ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+        le = log --oneline --decorate
+
+        # Show the history of a file, with diffs
+        filelog = log -u
+        fl = log -u
+        # Show modified files in last commit:
+        dl = "!git ll -1"
+        # Show a diff last commit:
+        dlc = diff --cached HEAD^ 
+
+        # Show content (full diff) of a commit given a revision
+        dr  = "!f() { git diff "$1"^.."$1"; }; f"
+        lc  = "!f() { git ll "$1"^.."$1"; }; f"
+        diffr  = "!f() { git diff "$1"^.."$1"; }; f"
+
+        # Finding files and content inside files (grep)
+        f = "!git ls-files | grep -i"
+
+        # list all your Aliases (la)
+        la = "!git config -l | grep alias | cut -c 7-"
+
+        # Show the last tag:
+        lasttag = describe --tags --abbrev=0
+        lt = describe --tags --abbrev=0
+
+        # merge stuff
+                ours = "!f() { git co --ours $@ && git add $@; }; f"
+        theirs = "!f() { git co --theirs $@ && git add $@; }; f"
+
+        # shortcuts
+        cp = cherry-pick
+        st = status -s
+        cl = clone
+        ci = commit
+        co = checkout
+        br = branch
+        diff = diff --word-diff
+        dc = diff --cached
+        r = reset
+        r1 = reset HEAD^
+        r2 = reset HEAD^^
+        rh = reset --hard
+        rh1 = reset HEAD^ --hard
+        rh2 = reset HEAD^^ --hard
+        sl = stash list
+        sa = stash apply
+        ss = stash save
