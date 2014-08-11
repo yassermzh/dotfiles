@@ -238,3 +238,15 @@
 ;; ---------------------
 ;; (load-theme 'misterioso)
 (load-theme 'zenburn t)
+
+;; ---------------------
+;; -- my stuff: auto complete path in file --
+;; ---------------------
+;; write /home/yas/Down and press ctrl+alt+/ would complete it!
+(global-set-key (kbd "C-M-/") 'my-expand-file-name-at-point)
+(defun my-expand-file-name-at-point ()
+  "Use hippie-expand to expand the filename"
+  (interactive)
+  (let ((hippie-expand-try-functions-list '(try-complete-file-name-partially try-complete-file-name)))
+    (call-interactively 'hippie-expand)))
+
