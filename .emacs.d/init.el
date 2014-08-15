@@ -66,15 +66,34 @@
 (global-set-key "\M-h" 'backward-delete-word)
 (global-set-key "\M-u" 'zap-to-char)
 
+
 ;; ---------------------------
 ;; -- JS Mode configuration --
 ;; ---------------------------
 (load "js-config.el")
-(add-to-list 'load-path "~/.emacs.d/jade-mode") ;; github.com/brianc/jade-mode
-(require 'sws-mode)
-(require 'jade-mode)    
-(add-to-list 'auto-mode-alist '("\\.styl$" . sws-mode))
-(add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
+;; (add-to-list 'load-path "~/.emacs.d/jade-mode") ;; github.com/brianc/jade-mode
+;;(require 'sws-mode)
+;;(require 'jade-mode)    
+;;(add-to-list 'auto-mode-alist '("\\.styl$" . sws-mode))
+;;(add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
+
+(autoload 'js3-mode "js3" nil t)
+(add-to-list 'auto-mode-alist '("\\.js$" . js3-mode))
+
+(custom-set-variables
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(js3-auto-indent-p t)
+ '(js3-enter-indents-newline t)
+ '(js3-expr-indent-offset 2)
+ '(js3-indent-on-enter-key t)
+ '(js3-dots-indent t)
+ '(js3-lazy-operators t)
+ '(js3-lazy-commas t)
+ '(js3-expr-indent-offset 2)
+ '(js3-paren-indent-offset 2)
+ '(js3-square-indent-offset 2)
+ '(js3-curly-indent-offset 2))
 
 
 ;; ------------------------
@@ -250,3 +269,24 @@
   (let ((hippie-expand-try-functions-list '(try-complete-file-name-partially try-complete-file-name)))
     (call-interactively 'hippie-expand)))
 
+;; ------------------------------------
+;; -- my stuff: angular-mode - --
+;; ------------------------------------
+(add-to-list 'load-path "~/.emacs.d/angularjs-mode") 
+(require 'angular-mode)
+
+;; --------------------------
+;; -- my stuff: inteligent JS
+;; --------------------------
+;; from http://ternjs.net/doc/manual.html#emacs
+;; clone tern, ./configure && make && make install
+
+(add-to-list 'load-path "~/.emacs.d/tern/emacs/")
+(autoload 'tern-mode "tern.el" nil t)
+(add-hook 'js3-mode-hook (lambda () (tern-mode t)))
+(add-hook 'js3-mode-hook (lambda () (auto-complete-mode t)))
+(eval-after-load 'tern
+  '(progn
+     (require 'tern-auto-complete)
+     (tern-ac-setup)))
+(ac-flyspell-workaround)
