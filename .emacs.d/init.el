@@ -101,11 +101,8 @@
 ;; ------------------------
 (require 'package)
 (add-to-list 'package-archives
-  '("melpa" . "http://melpa.milkbox.net/packages/") t)
-
-
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/") t)
+  '("melpa" . "http://melpa.milkbox.net/packages/"))
+  '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
 
 ;; ------------------------------ 
@@ -159,7 +156,7 @@
 ;; -- my stuff: autoload buffers --
 ;; --------------------------------
 ;; auto load all buffer in case of disk changes
-;; (global-auto-revert-mode t)
+(global-auto-revert-mode t)
 
 (global-set-key [f5] (lambda () (interactive) (revert-buffer nil t)))
 
@@ -299,3 +296,23 @@
 (load "spell-check")
 ;; install flyspell
 (ac-flyspell-workaround)
+
+
+;; --------------------------
+;; my stuff: from https://github.com/pierre-lecocq/emacs4developers/
+;; -------------------------
+;; Ask "y" or "n" instead of "yes" or "no". Yes, laziness is great.
+(fset 'yes-or-no-p 'y-or-n-p)
+;; Remove useless whitespace before saving a file
+(add-hook 'before-save-hook 'whitespace-cleanup)
+(add-hook 'before-save-hook (lambda() (delete-trailing-whitespace)))
+;; Save backup files in a dedicated directory
+(setq backup-directory-alist '(("." . "~/.saves")))
+;; Set locale to UTF8
+(set-language-environment 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(setq locale-coding-system 'utf-8)
+(set-default-coding-systems 'utf-8)
+(set-selection-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
+
