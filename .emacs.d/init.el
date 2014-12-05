@@ -121,6 +121,15 @@
 ;; I hate tabs!
 (setq-default indent-tabs-mode nil)
 
+;; -------------------------------- 
+;; -- my stuff: untabify on save --
+;; --------------------------------
+;; if indent-tabs-mode is off, untabify before saving
+ (add-hook 'write-file-hooks 
+          (lambda () (if (not indent-tabs-mode)
+                         (untabify (point-min) (point-max)))
+                      nil ))
+
 
 ;; ------------------------------ 
 ;; -- my stuff: show full path --
