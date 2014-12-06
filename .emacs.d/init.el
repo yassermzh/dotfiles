@@ -342,8 +342,14 @@
     (call-interactively 'hippie-expand)))
 
 
-;; -------------------------------
-;; -- my stuff: desktop change dir
-;; -------------------------------
+;; ----------------------------------
+;; -- my stuff: desktop change dir --
+;; ----------------------------------
 (global-set-key (kbd "C-M-d") 'desktop-change-dir)
 
+
+;; -----------------------------------------------------
+;; -- my stuff: show path to have unique buffer names --
+;; -----------------------------------------------------
+;; (require 'uniquify)
+(setq uniquify-buffer-name-style 'post-forward)
