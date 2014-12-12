@@ -230,6 +230,18 @@
 ;; ------------------------------------
 (desktop-save-mode 1)
 
+                                                                                                                                                           
+;;; ------------------------------------                                                                                                                   
+;;; -- my stuff: yasnippet-mode - --                                                                                                                       
+;;; ------------------------------------                                                                                                                   
+;; http://truongtx.me/2013/01/06/config-yasnippet-and-autocomplete-on-emacs/                                                                               
+;; should be loaded before auto complete so that they can work together                                                                                    
+(require 'yasnippet)                                                                                                                                       
+(yas-global-mode 1)                                                                                                                                        
+;; (require 'angular-snippets)                                                                                                                
+(define-key yas-minor-mode-map (kbd "<tab>") nil)                                                                                                          
+(define-key yas-minor-mode-map (kbd "TAB") nil)                                                                                                            
+(global-set-key (kbd "C-i") 'yas-expand)   
 
 ;; ------------------------------------                                                                                                                    
 ;; -- my stuff: auto-complete-mode - --                                                                                                                    
@@ -290,6 +302,7 @@
 (add-to-list 'load-path "~/.emacs.d/tern/emacs/")
 (autoload 'tern-mode "tern.el" nil t)
 (add-hook 'js3-mode-hook (lambda () (tern-mode t)))
+(add-hook 'js3-mode-hook (lambda () (yas-minor-mode t)))
 (add-hook 'js3-mode-hook (lambda () (auto-complete-mode t)))
 (add-hook 'js3-mode-hook (lambda () (flyspell-mode t)))
 (eval-after-load 'tern
