@@ -366,3 +366,9 @@
 ;; -----------------------------------------------------
 ;; (require 'uniquify)
 (setq uniquify-buffer-name-style 'post-forward)
+
+;; -----------------------------------------------------
+;; -- my stuff: show matching paranthesis --
+;; -----------------------------------------------------
+(show-paren-mode 1)
+
