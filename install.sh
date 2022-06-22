@@ -21,3 +21,12 @@ ln -sf "$HOME/dotfiles/zsh/external" "$HOME/.config/zsh"
 ########
 mkdir -p "$XDG_CONFIG_HOME/tmux"
 ln -sf "$DOTFILES/tmux/tmux.conf" "$XDG_CONFIG_HOME/tmux/tmux.conf"
+
+
+######
+# i3 #
+######
+rm -rf "$HOME/.config/i3"
+ln -s "$HOME/dotfiles/i3" "$HOME/.config"
+
+
