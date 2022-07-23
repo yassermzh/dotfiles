@@ -9,6 +9,7 @@ source ~/dotfiles/zsh/external/completion.zsh
 fpath=($ZDOTDIR/external $fpath)
 
 autoload -Uz prompt_purification_setup; prompt_purification_setup
+autoload -Uz cursor_mode && cursor_mode
 
 # Push the current directory visited on to the stack.
 setopt AUTO_PUSHD
