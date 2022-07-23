@@ -259,6 +259,7 @@ bar {
 
 set $refresh_i3status killall -SIGUSR1 i3status
 
+exec --no-startup-id dunst
 
 ## Include
 include $XDG_CONFIG_HOME/i3/include/*.conf
