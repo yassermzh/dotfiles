@@ -15,11 +15,9 @@ function is_mute {
 
 function send_notification {
     volume=`get_volume`
-    # Make the bar with the special character ─ (it's not dash -)
-    # https://en.wikipedia.org/wiki/Box-drawing_character
-    bar=$(seq -s "─" $(($volume / 5)) | sed 's/[0-9]//g')
+    # bar=$(seq -s "─" $(($volume / 5)) | sed 's/[0-9]//g')
     # Send the notification
-    dunstify -i audio-volume-muted-blocking -t 800 -r 2593 -u normal "$volume% $bar"
+    dunstify -i audio-volume-muted-blocking -t 800 -r 2593 -u normal "volume: $volume%"
 }
 
 case $1 in
@@ -28,7 +26,7 @@ case $1 in
     pactl set-sink-mute @DEFAULT_SINK@ off > /dev/null
     # Up the volume (+ 5%)
     volume=`get_volume`
-    volume=$((volume + 2 > 100 ? 100 : volume + 2))
+    volume=$((volume + 5 > 200 ? 200 : volume + 5))
     pactl set-sink-volume @DEFAULT_SINK@ "$volume%" > /dev/null
     send_notification
     ;;

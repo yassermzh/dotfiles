@@ -5,3 +5,5 @@ URxvt*internalBorder: 4
 URxvt*scrollBar: false
 URxvt*saveLines: 5000
 
+!URxvt*borderColor: S_base0 
+

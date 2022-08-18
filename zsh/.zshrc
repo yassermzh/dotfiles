@@ -20,6 +20,7 @@ setopt PUSHD_SILENT
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/dotfiles/zsh/external/bd.zsh
+source /usr/share/nvm/init-nvm.sh  
 
 if [ $(command -v "fzf") ]; then
    source /usr/share/fzf/completion.zsh 
@@ -33,3 +34,6 @@ if [ "$(tty)" = "/dev/tty1" ];
 then
   pgrep i3 || exec startx "$XDG_CONFIG_HOME/X11/.xinitrc" 
 fi
+
+bindkey -v
+export KEYTIMEOUT=1

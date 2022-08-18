@@ -26,10 +26,13 @@ ln -sf "$DOTFILES/tmux/tmux.conf" "$XDG_CONFIG_HOME/tmux/tmux.conf"
 ######
 # i3 #
 ######
-rm -rf "$HOME/.config/i3"
-ln -s "$HOME/dotfiles/i3" "$HOME/.config"
+rm -rf "$XDG_CONFIG_HOME/i3"
+ln -s "$DOTFILES/i3" "$XDG_CONFIG_HOME"
 
 # dunst #
 mkdir -p "$XDG_CONFIG_HOME/dunst"
 ln -sf "$DOTFILES/dunst/dunstrc" "$XDG_CONFIG_HOME/dunst/dunstrc"
 
+
+# gestures
+cp "$DOTFILES/libinput-gestures.conf" "$XDG_CONFIG_HOME"
