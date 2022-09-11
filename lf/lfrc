@@ -1,0 +1,17 @@
+set icons true
+set hidden false
+
+map <delete> delete
+
+
+cmd open ${{
+  google-chrome-stable "$f"
+}}
+
+
+map <enter> open
+#map ae open
+map gD cd ~/Downloads
+map gw cd ~/works
+
+map DD delete

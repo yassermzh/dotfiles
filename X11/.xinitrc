@@ -13,10 +13,13 @@ setxkbmap -layout us,ir -option grp:alt_shift_toggle
 setxkbmap -option 'caps:ctrl_modifier'
 xcape -e 'Caps_Lock=Escape'
 xmodmap -e "keysym Menu = Super_R"
-#xmodmap -e "keysym backslash = Return"
-#xmodmap -e "keysym less = backslash"
 
-libinput-gestures-setup start
+#xmodmap -e "keycode 51 = Return"
+#xmodmap -e "keycode 94 = backslash"
+
+xset r rate 350 50 # keyboard repeat start-delay rate
+
+#libinput-gestures-setup start
 #exec --no-startup-id "libinput-gestures-setup start"
 
 exec i3
