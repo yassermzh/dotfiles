@@ -37,3 +37,5 @@ fi
 
 bindkey -v
 export KEYTIMEOUT=1
+
+export PATH="$HOME/.local/bin:$PATH"

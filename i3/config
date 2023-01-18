@@ -231,8 +231,9 @@ for_window [class="URxvt*"] border pixel 1
 
 ## i3bar and i3status
 bar {
-    status_command i3status --config ~/.config/i3/i3status.conf	
-    
+    #status_command i3status --config ~/.config/i3/i3status.conf	
+    status_command ~/.config/i3/scripts/i3status_with_lang.sh
+
     # Disable all tray icons
     tray_output none
     separator_symbol " "
