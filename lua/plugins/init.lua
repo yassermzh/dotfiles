@@ -22,10 +22,13 @@ return {
     { 'williamboman/mason-lspconfig.nvim' },
     -- LSP
     { 'VonHeikemen/lsp-zero.nvim',        branch = 'v3.x' },
-    { 'neovim/nvim-lspconfig' },
-    { 'hrsh7th/cmp-nvim-lsp' },
-    { 'hrsh7th/nvim-cmp' },
-    { 'L3MON4D3/LuaSnip' },
+     "neovim/nvim-lspconfig",
+     "L3MON4D3/LuaSnip" ,
+     "hrsh7th/nvim-cmp" ,
+     -- "hrsh7th/cmp-buffer" ,
+     "hrsh7th/cmp-path" ,
+     "hrsh7th/cmp-nvim-lsp" ,
+--    "cmp-cmdline",
 
     -- prettier
     "jose-elias-alvarez/null-ls.nvim",
@@ -35,12 +38,12 @@ return {
     "Exafunction/codeium.vim",
 
     -- browser tree
-    {
-        "nvim-tree/nvim-tree.lua",
-        version = "*",
-        lazy = false,
-        dependencies = {
-           -- "nvim-tree/nvim-web-devicons",
-        },
-    }
+    -- {
+    --     "nvim-tree/nvim-tree.lua",
+    --     version = "*",
+    --     lazy = false,
+    --     dependencies = {
+    --         -- "nvim-tree/nvim-web-devicons",
+    --     },
+    -- }
 }
