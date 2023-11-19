@@ -44,4 +44,5 @@ vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
 
-vim.keymap.set("n", "<D-b>", vim.cmd.NvimTreeToggle)
+
+vim.keymap.set("n", "<C-b>", vim.cmd.NvimTreeFindFileToggle)
