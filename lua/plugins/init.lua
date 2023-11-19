@@ -59,6 +59,11 @@ return {
             -- or leave it empty to use the default settings
             -- refer to the configuration section below
         }
+    },
+
+
+    -- folding
+    { "kevinhwang91/nvim-ufo", dependencies = { "kevinhwang91/promise-lib" } },
 
     -- add this to your lua/plugins.lua, lua/plugins/init.lua,  or the file you keep your other plugins:
     {
