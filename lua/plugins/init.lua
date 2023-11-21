@@ -73,6 +73,16 @@ return {
         },
         lazy = false,
     }
+
+    -- images
+    {
+        "princejoogie/chafa.nvim",
+        requires = {
+            "nvim-lua/plenary.nvim",
+            "m00qek/baleia.nvim"
+        },
+    },
+
     -- gitsigns
     "lewis6991/gitsigns.nvim",
 
