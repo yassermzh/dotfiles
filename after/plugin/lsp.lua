@@ -10,8 +10,10 @@ require('mason-lspconfig').setup({
         lua_ls = function()
             require("lspconfig").lua_ls.setup({
                 settings = {
-                    diagnostics = {
-                        globals = { 'vim' }
+                    Lua = {
+                        diagnostics = {
+                            globals = { 'vim' }
+                        }
                     }
                 }
             })
@@ -59,8 +61,20 @@ lsp.on_attach(function(client, bufnr)
     -- vim.keymap.set('n', '<space>f', function()
     --    vim.lsp.buf.format { async = true }
     -- end, opts)
-
 end)
+
+
+-- require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls(
+--     {
+--         settings = {
+--             Lua = {
+--                 diagnostics = {
+--                     globals = { 'vim' }
+--                 }
+--             }
+--         }
+--     }
+-- ))
 
 lsp.setup()
 
