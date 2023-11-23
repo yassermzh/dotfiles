@@ -35,6 +35,7 @@ vim.opt.colorcolumn = "0" -- maybe 80 columns
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+-- Case-insensitive searching UNLESS \C or capital in search
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
