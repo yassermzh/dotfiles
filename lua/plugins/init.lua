@@ -98,4 +98,8 @@ return {
 
   "folke/zen-mode.nvim",
 
+  {
+    "anuvyklack/windows.nvim",
+    dependencies = "anuvyklack/middleclass",
+  }
 }
