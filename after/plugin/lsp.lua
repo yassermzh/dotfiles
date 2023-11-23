@@ -1,12 +1,12 @@
-local lsp = require("lsp-zero")
+local lsp_zero   = require("lsp-zero")
 
-lsp.preset("recommended")
+lsp_zero.preset("recommended")
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
     ensure_installed = { 'tsserver', 'eslint', 'rust_analyzer' },
     handlers = {
-        lsp.default_setup,
+        lsp_zero.default_setup,
         lua_ls = function()
             require("lspconfig").lua_ls.setup({
                 settings = {
@@ -35,7 +35,7 @@ cmp.setup({
     })
 })
 
-lsp.set_preferences({
+lsp_zero.set_preferences({
     suggest_lsp_servers = false,
     sign_icons = {
         error = 'E',
@@ -45,7 +45,7 @@ lsp.set_preferences({
     }
 })
 
-lsp.on_attach(function(client, bufnr)
+lsp_zero.on_attach(function(client, bufnr)
     local opts = { buffer = bufnr, remap = false }
 
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
@@ -76,7 +76,7 @@ end)
 --     }
 -- ))
 
-lsp.setup()
+lsp_zero.setup()
 
 vim.diagnostic.config({
     virtual_text = true
