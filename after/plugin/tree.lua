@@ -1,5 +1,8 @@
 -- empty setup using defaults
 require("nvim-tree").setup({
+    view = {
+        side = "right"
+    },
     -- disable rendering icons
     renderer = {
         icons = {
