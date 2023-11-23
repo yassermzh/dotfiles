@@ -96,4 +96,5 @@ return {
     -- gitsigns
     "lewis6991/gitsigns.nvim",
 
+    "folke/zen-mode.nvim",
 }
