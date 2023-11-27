@@ -39,5 +39,5 @@ vim.g.loaded_netrwPlugin = 1
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
-vim.opt.clipboard = "unnamed"
+vim.opt.clipboard = "unnamedplus"
 
