@@ -102,4 +102,5 @@ return {
     "anuvyklack/windows.nvim",
     dependencies = "anuvyklack/middleclass",
   }
+  "ntpeters/vim-better-whitespace",
 }
