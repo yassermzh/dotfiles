@@ -31,7 +31,7 @@ return {
   --    "cmp-cmdline",
 
   -- prettier
-  "jose-elias-alvarez/null-ls.nvim",
+  "nvimtools/none-ls.nvim",
   "MunifTanjim/prettier.nvim",
 
   -- ai
