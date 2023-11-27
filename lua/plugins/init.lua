@@ -101,6 +101,10 @@ return {
   {
     "anuvyklack/windows.nvim",
     dependencies = "anuvyklack/middleclass",
-  }
+  },
+
+
+  -- { "davidmh/cspell.nvim", dependencies = { "Joakker/lua-json5" } },
+
   "ntpeters/vim-better-whitespace",
 }
