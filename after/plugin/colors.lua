@@ -5,7 +5,7 @@ require('rose-pine').setup({
 })
 
 function ColorMyPencils(color)
-  color = color or "rose-pine-moon"
+  color = color or "rose-pine"
   vim.cmd.colorscheme(color)
 
   -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
