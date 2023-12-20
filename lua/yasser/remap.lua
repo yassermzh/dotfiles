@@ -47,3 +47,6 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 vim.keymap.set("n", "<C-b>", vim.cmd.NvimTreeFindFileToggle)
 vim.keymap.set("n", "<leader>w", ':w<CR>')
+
+
+vim.keymap.set("n", "<leader>z", "<cmd>only<CR>")
