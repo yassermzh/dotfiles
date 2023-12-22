@@ -1,0 +1,119 @@
+;; See keymap/tutorial.kbd for a more complete tutorial
+
+(defcfg
+  input (iokit-name "Apple Internal Keyboard / Trackpad")
+  output (kext)
+  fallthrough true
+)
+
+
+;; lmet -> cmd
+;; lalt -> option
+;; fn   -> fn
+;; grv == `
+
+
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft up
+  fn   lctl lalt lmet           spc            rmet ralt left down rght
+)
+
+;; Below, I use `around' to compose `layer-toggle' with `fn' (instead
+;; of using `layer-toggle' directly) so that the `fn' keypress
+;; actually gets emitted. This matters when using an application that
+;; can use `fn' as a modifier (like Emacs).
+
+(defalias
+  ;; layer jumping
+  fn  (around (layer-toggle apple) fn)
+  lA (tap-hold-next-release 200 3 (layer-toggle lA))
+  lB (tap-hold-next-release 200 a (layer-toggle lB))
+  lE (tap-hold-next-release 200 ; (layer-toggle lE))
+
+  ;; home-row modifiers
+  a_s (tap-hold-next-release 200 s lalt)
+  a_l (tap-hold-next-release 200 l lalt)
+
+  s_d (tap-hold-next-release 200 d lsft)
+  s_k (tap-hold-next-release 200 k lsft)
+
+  c_f (tap-hold-next-release 200 f lctl)
+  c_j (tap-hold-next-release 200 j lctl)
+
+  ;;m_a (tap-hold-next-release 200 a lmet)
+  ;;m_; (tap-hold-next-release 200 ; lmet)
+
+  m_g (tap-hold-next-release 200 g lmet)
+  m_h (tap-hold-next-release 200 h lmet)
+
+  ;; space cadet
+  lcd (tap-hold-next 200 \( lsft)
+  rcd (tap-hold-next 200 \) lsft)
+
+  ;; other
+  cpl (tap-hold-next 200 esc lctl)
+  bsp (tap-hold-next 200 bspc lmet)
+  ent (tap-hold-next 200 enter rmet)
+)
+
+(deflayer default
+  _    brdn brup lp   mctl bldn blup prev pp   next mute vold volu
+  _    _    _    @lA  _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  @cpl @lB  @a_s @s_d @c_f @m_g @m_h @c_j @s_k @a_l @lE  _    _
+  @lcd _    _    _    _    _    _    _    _    _    _    @rcd _
+  @fn  _    _    @bsp        _                 @ent _    _    _    _
+)
+
+(deflayer lA
+  _    _    _    _    _    _    _    _    _    _    _     _    _
+  _    _    _    _    _    _    _    _    _    _    _     _    _    _
+  _    _    _    _    _    _    pgup home _    end  _     _    _    _
+  _    _    lalt lsft lctl lmet pgdn left down up  right  _    _
+  _    _    _    _    _    _    _    _    _    _    _     _    _
+  _    _    _    _              _              _    _     _    _    _
+)
+
+(deflayer lB
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    '    7    8    9    *    _    _    _
+  _    _    lalt lsft lctl lmet =    4    5    6    +    _    _
+  _    _    _    _    _    _    -    1    2    3    /    _    _
+  _    _    _    _              0              .    _    _    _    _
+)
+
+(deflayer lE
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    !    @    {    }    |    _    _    _    _    _    _    _    _
+  _    #    $    \(  \)    `    rmet rctl rsft ralt _    _    _
+  _    %    ^    [    ]    ~    _    _    _    _    _    _    _
+  _    _    _    _              _              _    _    _    _    _
+)
+
+(deflayer transparent
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _              _              _    _    _    _    _
+)
+
+(deflayer apple
+  ;; this is a safe-guard!!!
+  ;; don't change because if the Keyboard
+  ;; get's messed up this will set it to
+  ;; the hardware default
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft up
+  fn   lctl lalt lmet           spc            rmet ralt left down rght
+)
