@@ -30,7 +30,7 @@
 (defalias
   ;; layer jumping
   fn  (around (layer-toggle apple) fn)
-  lNv (tap-hold 250 e (layer-toggle lNv))
+  lNv (tap-hold 250 r (layer-toggle lNv))
   lNm (tap-hold 250 a (layer-toggle lNm))
   ;;lS (tap-next ; (layer-toggle lS))
   lS (tap-hold 250 ; (layer-toggle lS))
@@ -84,10 +84,10 @@
 (deflayer lNm
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    -    7    8    9    *    _    _    _
+  _    _    _    _    _    _    '    7    8    9    *    _    _    _
   _    _    lalt lsft lctl lmet =    4    5    6    +    _    _
-  _    _    _    _    _    _    0    1    2    3    /    _    _
-  _    _    _    _              _              .    _    _    _    _
+  _    _    _    _    _    _    -    1    2    3    /    _    _
+  _    _    _    _              0              .    _    _    _    _
 )
 
 (deflayer lS
