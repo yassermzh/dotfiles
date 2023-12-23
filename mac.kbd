@@ -30,28 +30,27 @@
 (defalias
   ;; layer jumping
   fn  (around (layer-toggle apple) fn)
-  lNv (tap-hold 250 r (layer-toggle lNv))
-  lNm (tap-hold 250 a (layer-toggle lNm))
+  lNv (tap-hold 250 spc (layer-toggle lNv))
+  lNm (tap-hold 250 v (layer-toggle lNm))
   ;;lS (tap-next ; (layer-toggle lS))
-  lS (tap-hold 250 ; (layer-toggle lS))
+  lS (tap-hold 250 m (layer-toggle lS))
   ;;lS (tap-hold-next 2500 ; (layer-toggle lS))
   ;;lS (tap-hold-next-release 250 ; (layer-toggle lS))
 
   ;; home-row modifiers
   a_s (tap-hold-next-release 250 s lalt)
+  c_; (tap-hold-next-release 250 ; lctl)
+
+  m_d (tap-hold-next-release 250 d lmet)
   a_l (tap-hold-next-release 250 l lalt)
 
-  s_d (tap-hold-next-release 250 d lsft)
-  s_k (tap-hold-next-release 250 k lsft)
+  s_f (tap-hold-next-release 250 f lsft)
+  m_k (tap-hold-next-release 250 k lmet)
 
-  c_f (tap-hold-next-release 250 f lctl)
-  c_j (tap-hold-next-release 250 j lctl)
+  c_a (tap-hold-next-release 250 a lctl)
+  m_; (tap-hold-next-release 250 ; lmet)
 
-  ;;m_a (tap-hold-next-release 250 a lmet)
-  ;;m_; (tap-hold-next-release 250 ; lmet)
-
-  m_g (tap-hold-next-release 250 g lmet)
-  m_h (tap-hold-next-release 250 h lmet)
+  s_j (tap-hold-next-release 250 j lsft)
 
   ;; space cadet
   lcd (tap-hold-next 250 \( lsft)
@@ -63,20 +62,22 @@
   ent (tap-hold-next 250 enter rmet)
 )
 
+;; home row based on https://precondition.github.io/home-row-mods
+
 (deflayer default
   _    brdn brup lp   mctl bldn blup prev pp   next mute vold volu
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    @lNv _    _    _    _    _    _    _    _    _
-  @cpl @lNm @a_s @s_d @c_f @m_g @m_h @c_j @s_k @a_l @lS  _    _
-  @lcd _    _    _    _    _    _    _    _    _    _    @rcd _
-  @fn  _    _    @bsp        _                 @ent _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  @cpl @c_a @a_s @m_d @s_f _    _   @s_j @m_k  @a_l @c_;  _    _
+  @lcd _    _    _    @lNm _    _    @lS  _    _    _    @rcd _
+  @fn  _    _    @bsp           @lNv           @ent _    _    _    _
 )
 
 (deflayer lNv
   _    _    _    _    _    _    _    _    _    _    _     _    _
   _    _    _    _    _    _    _    _    _    _    _     _    _    _
   _    _    _    _    _    _    pgup home _    end  _     _    _    _
-  _    _    lalt lsft lctl lmet pgdn left down up  right  _    _
+  _    lctl lalt lmet lsft _    pgdn left down up  right  _    _
   _    _    _    _    _    _    _    _    _    _    _     _    _
   _    _    _    _              _              _    _     _    _    _
 )
@@ -84,8 +85,8 @@
 (deflayer lNm
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    '    7    8    9    *    _    _    _
-  _    _    lalt lsft lctl lmet =    4    5    6    +    _    _
+  _    _    _    _    _    _    -    7    8    9    *    _    _    _
+  _    lctl lalt lmet lsft _    =    4    5    6    +    _    _
   _    _    _    _    _    _    -    1    2    3    /    _    _
   _    _    _    _              0              .    _    _    _    _
 )
@@ -93,8 +94,8 @@
 (deflayer lS
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    !    @    {    }    |    _   _    _    _    _    _    _    _
-  _    #    $    \(  \)    `    rmet rctl rsft ralt _    _    _
+  _    !    @    {    }    |    _    _    _    _    _    _    _    _
+  _    #    $    \(  \)    `    _    rsft rmet ralt rctl _    _
   _    %    ^    [    ]    ~    _    _    _    _    _    _    _
   _    _    _    _              _              _    _    _    _    _
 )
