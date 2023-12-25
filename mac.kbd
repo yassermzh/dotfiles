@@ -33,13 +33,13 @@
   lNv (tap-hold 250 spc (layer-toggle lNv))
   lNm (tap-hold 250 a (layer-toggle lNm))
   ;;lS (tap-next ; (layer-toggle lS))
-  lS (tap-hold 250 ; (layer-toggle lS))
+  ;;lS (tap-hold 250 ; (layer-toggle lS))
   ;;lS (tap-hold-next 2500 ; (layer-toggle lS))
-  ;;lS (tap-hold-next-release 250 ; (layer-toggle lS))
+  lS (tap-hold-next-release 250 ; (layer-toggle lS))
 
   ;; home-row modifiers
   a_s (tap-hold-next-release 250 s lalt)
-  c_' (tap-hold-next-release 250 ' lctl)
+  c_m (tap-hold-next-release 250 m lctl)
 
   m_d (tap-hold-next-release 250 d lmet)
   a_l (tap-hold-next-release 250 l lalt)
@@ -47,8 +47,8 @@
   s_f (tap-hold-next-release 250 f lsft)
   m_k (tap-hold-next-release 250 k lmet)
 
-  c_a (tap-hold-next-release 250 a lctl)
-  m_; (tap-hold-next-release 250 ; lmet)
+  c_v (tap-hold-next-release 250 v lctl)
+  ;;m_; (tap-hold-next-release 250 ; lmet)
 
   s_j (tap-hold-next-release 250 j lsft)
 
@@ -68,8 +68,8 @@
   _    brdn brup lp   mctl bldn blup prev pp   next mute vold volu
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  @cpl @lNm @a_s @m_d @s_f _    _    @s_j @m_k @a_l @lS  @c_'  _
-  @lcd _    _    _    _    _    _    _    _    _    _    @rcd _
+  @cpl @lNm @a_s @m_d @s_f _    _    @s_j @m_k @a_l @lS  _    _
+  @lcd _    _    _    @c_v _    _    @c_m _    _    _    @rcd _
   @fn  _    _    @bsp           @lNv           @ent _    _    _    _
 )
 
@@ -78,7 +78,7 @@
   _    _    _    _    _    _    _    _    _    _    _     _    _    _
   _    _    _    _    _    _    pgup home _    end  _     _    _    _
   lctl _    lalt lmet lsft _    pgdn left down up  right  _    _
-  _    _    _    _    _    _    _    _    _    _    _     _    _
+  _    _    _    _    lctl _    _    _    _    _    _     _    _
   _    _    _    _              _              _    _     _    _    _
 )
 
@@ -87,7 +87,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    \_   7    8    9    *    _    _    _
   lctl _    lalt lmet lsft _    =    4    5    6    +    _    _
-  _    _    _    _    _    _    -    1    2    3    /    _    _
+  _    _    _    _    lctl _    -    1    2    3    /    _    _
   _    _    _    _              0              .    _    _    _    _
 )
 
@@ -96,7 +96,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    !    @    {    }    |    _    _    _    _    _    _    _    _
   _    #    $    \(  \)    `    _    rsft rmet ralt _    rctl _
-  _    %    ^    [    ]    ~    _    _    _    _    _    _    _
+  _    %    ^    [    ]    ~    _    rctl    _    _    _    _    _
   _    _    _    _              _              _    _    _    _    _
 )
 
