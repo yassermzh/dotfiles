@@ -32,7 +32,14 @@ cmp.setup({
     ["<C-Space>"] = cmp.mapping.complete(),
     ['<Tab>'] = nil,
     ['<S-Tab>'] = nil,
-  })
+  }),
+  enabled = function()
+    if vim.bo.buftype == 'prompt' then
+      return false
+    end
+
+    return true
+  end,
 })
 
 lsp_zero.set_sign_icons({
