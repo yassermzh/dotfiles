@@ -64,16 +64,27 @@
   fwd (around fn delete)
   ;;fwd (tap-hold 200 (around fn delete) :timeout-button (repeat-key (around fn delete)))
 
-  lC (layer-switch lUpperCase)
-  lc (layer-switch default)
+  lUp (layer-switch lUpperCase)
+  lCk (layer-switch colemak)
 
   ;; cap letter o
   O S-;
+
+  lDf (layer-switch default)
 )
 
 ;; home row based on https://precondition.github.io/home-row-mods
 
 (deflayer default
+  @lCk _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _              _              _    _    _    _    _
+)
+
+(deflayer colemak
   _    brdn brup lp   mctl bldn blup prev pp   next mute vold volu
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
@@ -83,9 +94,9 @@
 )
 
 (deflayer lNv
-  _    _    _    _    _    _    _    _    _    _    _     _    _
+  @lDf _    _    _    _    _    _    _    _    _    _     _    _
   _    _    _    _    _    _    _    _    _    _    _     _    _    _
-  @lC  _    _    @bsp _    _    pgup home @fwd end  _     _    _    _
+  @lUp _    _    @bsp _    _    pgup home @fwd end  _     _    _    _
   lctl _    lalt lmet lsft _    pgdn left down up  right  _    _
   _    _    _    _    lctl _    _    @ent _    _    _     _    _
   _    _    _    _              _              _    _     _    _    _
@@ -112,7 +123,7 @@
 (deflayer lUpperCase
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  @lc  Q    W    E    R    T    Y    U    I    O    P    _    _    _
+  @lCk Q    W    E    R    T    Y    U    I    O    P    _    _    _
   _    A    S    D    F    G    H    J    K    L    @O   _    _
   _    Z    X    C    V    B    N    M    _    _    _    _    _
   _    _    _    _              _              _    _    _    _    _
