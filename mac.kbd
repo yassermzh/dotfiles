@@ -60,6 +60,9 @@
   cpl (tap-hold-next 250 esc lctl)
   bsp (tap-hold-next 250 bspc lmet)
   ent (tap-hold-next 250 enter rmet)
+
+  fwd (around fn delete)
+  ;;fwd (tap-hold 200 (around fn delete) :timeout-button (repeat-key (around fn delete)))
 )
 
 ;; home row based on https://precondition.github.io/home-row-mods
@@ -76,9 +79,9 @@
 (deflayer lNv
   _    _    _    _    _    _    _    _    _    _    _     _    _
   _    _    _    _    _    _    _    _    _    _    _     _    _    _
-  _    _    _    _    _    _    pgup home _    end  _     _    _    _
+  _    _    _    @bsp _    _    pgup home @fwd end  _     _    _    _
   lctl _    lalt lmet lsft _    pgdn left down up  right  _    _
-  _    _    _    _    lctl _    _    _    _    _    _     _    _
+  _    _    _    _    lctl _    _    @ent _    _    _     _    _
   _    _    _    _              _              _    _     _    _    _
 )
 
