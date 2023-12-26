@@ -63,6 +63,12 @@
 
   fwd (around fn delete)
   ;;fwd (tap-hold 200 (around fn delete) :timeout-button (repeat-key (around fn delete)))
+
+  lC (layer-switch lUpperCase)
+  lc (layer-switch default)
+
+  ;; cap letter o
+  O S-;
 )
 
 ;; home row based on https://precondition.github.io/home-row-mods
@@ -79,7 +85,7 @@
 (deflayer lNv
   _    _    _    _    _    _    _    _    _    _    _     _    _
   _    _    _    _    _    _    _    _    _    _    _     _    _    _
-  _    _    _    @bsp _    _    pgup home @fwd end  _     _    _    _
+  @lC  _    _    @bsp _    _    pgup home @fwd end  _     _    _    _
   lctl _    lalt lmet lsft _    pgdn left down up  right  _    _
   _    _    _    _    lctl _    _    @ent _    _    _     _    _
   _    _    _    _              _              _    _     _    _    _
@@ -102,6 +108,16 @@
   _    %    ^    [    ]    ~    _    rctl    _    _    _    _    _
   _    _    _    _              _              _    _    _    _    _
 )
+
+(deflayer lUpperCase
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  @lc  Q    W    E    R    T    Y    U    I    O    P    _    _    _
+  _    A    S    D    F    G    H    J    K    L    @O   _    _
+  _    Z    X    C    V    B    N    M    _    _    _    _    _
+  _    _    _    _              _              _    _    _    _    _
+)
+
 
 (deflayer transparent
   _    _    _    _    _    _    _    _    _    _    _    _    _
