@@ -96,6 +96,16 @@ return {
   -- gitsigns
   "lewis6991/gitsigns.nvim",
 
+  --telescope frequency
+  {
+    "nvim-telescope/telescope-frecency.nvim",
+    config = function()
+      require("telescope").load_extension "frecency"
+    end,
+  },
+
+  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+
   "folke/zen-mode.nvim",
 
   {
@@ -107,4 +117,9 @@ return {
   -- { "davidmh/cspell.nvim", dependencies = { "Joakker/lua-json5" } },
 
   "ntpeters/vim-better-whitespace",
+
+  "nvim-telescope/telescope-media-files.nvim",
+
+  "nvim-telescope/telescope-live-grep-args.nvim",
+
 }
