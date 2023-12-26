@@ -46,3 +46,7 @@ vim.opt.clipboard = "unnamedplus"
 -- vim.opt.spellcapcheck = ''
 
 vim.opt.mouse = "a"
+
+
+-- vim.keymap.set("i", "<S-Insert>", [[<Cmd>set paste<CR><C-r>+<Cmd>set nopaste<CR>]], { noremap = true, silent = true })
+
