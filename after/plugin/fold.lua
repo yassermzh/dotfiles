@@ -24,4 +24,13 @@ for _, ls in ipairs(language_servers) do
         -- you can add other fields for setting up lsp server in this table
     })
 end
-require('ufo').setup()
+
+require('ufo').setup({
+   provider_selector = function(bufnr, filetype, buftype)
+       if filetype == 'gitcommit' then
+           return 'syntax'
+       else
+           return {'lsp', 'indent'}
+       end
+   end
+})
