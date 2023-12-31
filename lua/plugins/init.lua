@@ -124,4 +124,7 @@ return {
 
 
   "lifepillar/vim-solarized8",
+
+  "easymotion/vim-easymotion",
+
 }
