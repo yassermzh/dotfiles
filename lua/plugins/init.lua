@@ -127,4 +127,5 @@ return {
 
   "easymotion/vim-easymotion",
 
+  "ThePrimeagen/vim-be-good",
 }
