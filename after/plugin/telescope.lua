@@ -24,7 +24,16 @@ telescope.setup({
       filetypes = { "png", "webp", "jpg", "jpeg" },
       find_cmd = "rg" -- find command (defaults to `fd`)
     }
-  }
+  },
+  defaults = {
+    mappings = {
+      i = {
+        ["<C-e>"] = "move_selection_next",
+        ["<C-i>"] = "move_selection_previous",
+      }
+    }
+  },
+
 })
 
 -- To get fzf loaded and working with telescope, you need to call
