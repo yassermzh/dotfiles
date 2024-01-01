@@ -4,6 +4,7 @@
   input (iokit-name "Apple Internal Keyboard / Trackpad")
   output (kext)
   fallthrough true
+  allow-cmd true
 )
 
 
@@ -71,6 +72,7 @@
   O S-;
 
   lDf (layer-switch default)
+  st (cmd-button "/Users/yasser/.config/kmonad/state.sh colemak")
 )
 
 ;; home row based on https://precondition.github.io/home-row-mods
@@ -98,7 +100,7 @@
   _    _    _    _    _    _    _    _    _    _    _     _    _    _
   @lUp _    _    @bsp _    _    pgup home @fwd end  _     _    _    _
   lctl _    lalt lmet lsft _    pgdn left down up  right  _    _
-  _    _    _    _    lctl _    _    @ent _    _    _     _    _
+  @st  _    _    _    lctl _    _    @ent _    _    _     _    _
   _    _    _    _              _              _    _     _    _    _
 )
 
