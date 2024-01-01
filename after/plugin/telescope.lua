@@ -26,6 +26,7 @@ telescope.setup({
     }
   },
   defaults = {
+    path_display = { truncate = 2 },
     mappings = {
       i = {
         ["<C-e>"] = "move_selection_next",
@@ -33,7 +34,6 @@ telescope.setup({
       }
     }
   },
-
 })
 
 -- To get fzf loaded and working with telescope, you need to call
