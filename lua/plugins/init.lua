@@ -131,5 +131,4 @@ return {
 
   "tpope/vim-surround",
 
-  "pmizio/typescript-tools.nvim",
 }
