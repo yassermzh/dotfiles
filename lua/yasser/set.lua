@@ -41,11 +41,11 @@ vim.o.smartcase = true
 
 vim.opt.clipboard = "unnamedplus"
 
+-- vim.opt.spelllang = 'en'
 -- vim.opt.spell = true
 -- vim.opt.spellcapcheck = ''
 
 vim.opt.mouse = "a"
-
 
 -- vim.keymap.set("i", "<S-Insert>", [[<Cmd>set paste<CR><C-r>+<Cmd>set nopaste<CR>]], { noremap = true, silent = true })
 
