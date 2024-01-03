@@ -41,7 +41,6 @@ vim.o.smartcase = true
 
 vim.opt.clipboard = "unnamedplus"
 
--- vim.opt.spelllang = 'en'
 -- vim.opt.spell = true
 -- vim.opt.spellcapcheck = ''
 

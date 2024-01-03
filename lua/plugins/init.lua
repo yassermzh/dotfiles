@@ -114,7 +114,7 @@ return {
   },
 
 
-  -- { "davidmh/cspell.nvim", dependencies = { "Joakker/lua-json5" } },
+  { "davidmh/cspell.nvim", dependencies = { "Joakker/lua-json5" } },
 
   "ntpeters/vim-better-whitespace",
 
