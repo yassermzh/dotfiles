@@ -98,8 +98,8 @@
 (deflayer lNv
   @lDf _    _    _    _    _    _    _    _    _    _     _    _
   _    _    _    _    _    _    _    _    _    _    _     _    _    _
-  @lUp _    _    @bsp _    _    pgup home @fwd end  _     _    _    _
-  lctl _    lalt lmet lsft _    pgdn left down up  right  _    _
+  _    _    _    @bsp _    _    pgup home @fwd end  _     _    _    _
+  @lUp _    lalt lmet lsft _    pgdn left down up  right  _    _
   @st  _    _    _    lctl _    _    @ent _    _    _     _    _
   _    _    _    _              _              _    _     _    _    _
 )
@@ -125,8 +125,8 @@
 (deflayer lUpperCase
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  @lCk Q    W    E    R    T    Y    U    I    O    P    _    _    _
-  _    A    S    D    F    G    H    J    K    L    @O   _    _
+  _    Q    W    E    R    T    Y    U    I    O    P    _    _    _
+  @lCk A    S    D    F    G    H    J    K    L    @O   _    _
   _    Z    X    C    V    B    N    M    _    _    _    _    _
   _    _    _    _              _              _    _    _    _    _
 )
