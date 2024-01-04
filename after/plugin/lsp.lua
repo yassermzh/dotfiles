@@ -44,6 +44,15 @@ cmp.setup({
 
     return true
   end,
+  sources = cmp.config.sources({
+    -- Dont suggest Text from nvm_lsp
+    {
+      name = "nvim_lsp",
+      entry_filter = function(entry)
+        return require("cmp").lsp.CompletionItemKind.Text ~= entry:get_kind()
+      end
+    },
+  }),
 })
 
 lsp_zero.set_sign_icons({
