@@ -29,7 +29,11 @@ cmp.setup({
     ['<C-i>'] = cmp.mapping.select_prev_item(cmp_select),
     ['<C-e>'] = cmp.mapping.select_next_item(cmp_select),
     ['<C-o>'] = cmp.mapping.confirm({ select = true }),
-    ["<C-Space>"] = cmp.mapping.complete(),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<CR>'] = cmp.mapping.confirm {
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = true,
+    },
     ['<Tab>'] = nil,
     ['<S-Tab>'] = nil,
   }),
