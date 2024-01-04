@@ -66,5 +66,5 @@ vim.keymap.set('n', '<C-,>', '<C-o>', { noremap = true })
 vim.keymap.set('n', '<C-.>', '<C-i>', { noremap = true })
 vim.keymap.set({ 'n', 'v' }, 'W', 'e', { noremap = true })
 vim.keymap.set('i', '<C-x>', '<Esc>lxi', { noremap = true })
-
+vim.keymap.set('v', '<', 'o')
 vim.keymap.set('n', '<leader>gg', ':Git<CR>', { noremap = true })
