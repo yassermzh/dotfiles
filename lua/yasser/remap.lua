@@ -53,18 +53,18 @@ vim.keymap.set("n", "<leader>w", ':w<CR>')
 
 vim.keymap.set("n", "<leader>z", "<cmd>only<CR>")
 
-vim.keymap.set({ 'n', 'v' }, 'n', 'h', { noremap = true })
-vim.keymap.set({ 'n', 'v' }, 'e', 'j', { noremap = true })
-vim.keymap.set({ 'n', 'v' }, 'i', 'k', { noremap = true })
-vim.keymap.set({ 'n', 'v' }, 'o', 'l', { noremap = true })
-vim.keymap.set({ 'n', 'v' }, 't', 'i', { noremap = true })
-vim.keymap.set({ 'n', 'v' }, 'T', 'I', { noremap = true })
-vim.keymap.set('n', 'l', 'o', { noremap = true })
-vim.keymap.set('n', 'L', 'O', { noremap = true })
-vim.keymap.set('n', 'h', ':', { noremap = true })
-vim.keymap.set('n', '<C-,>', '<C-o>', { noremap = true })
-vim.keymap.set('n', '<C-.>', '<C-i>', { noremap = true })
-vim.keymap.set({ 'n', 'v' }, 'W', 'e', { noremap = true })
+vim.keymap.set({ 'n', 'v' }, 'n', 'h', { noremap = true }) -- left
+vim.keymap.set({ 'n', 'v' }, 'e', 'j', { noremap = true }) -- down
+vim.keymap.set({ 'n', 'v' }, 'i', 'k', { noremap = true }) -- up
+vim.keymap.set({ 'n', 'v' }, 'o', 'l', { noremap = true }) -- right
+vim.keymap.set({ 'n', 'v' }, 't', 'i', { noremap = true }) -- insert mode
+vim.keymap.set({ 'n', 'v' }, 'T', 'I', { noremap = true }) -- insert mode
+vim.keymap.set('n', 'l', 'o', { noremap = true }) -- newline below
+vim.keymap.set('n', 'L', 'O', { noremap = true }) -- newline above
+vim.keymap.set({ 'n', 'v' }, 'h', ':', { noremap = true }) -- command mode
+vim.keymap.set('n', '<C-,>', '<C-o>', { noremap = true }) -- go back
+vim.keymap.set('n', '<C-.>', '<C-i>', { noremap = true }) -- go forward
+vim.keymap.set({ 'n', 'v' }, 'W', 'e', { noremap = true }) -- end of word
 vim.keymap.set('i', '<C-x>', '<Esc>lxi', { noremap = true })
-vim.keymap.set('v', '<', 'o')
+vim.keymap.set('v', '<', 'o') -- go to first selection line
 vim.keymap.set('v', 'd', 'i') -- inside 
