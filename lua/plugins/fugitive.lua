@@ -1,6 +1,11 @@
-vim.keymap.set('n', '<leader>gg', ':Git<CR>')
-vim.keymap.set("n", "<leader>gl", ":Git log --oneline<CR>");
-
+return {
+  {
+    "tpope/vim-fugitive",
+    config = function()
+      vim.keymap.set('n', '<leader>gg', ':Git<CR>')
+      vim.keymap.set("n", "<leader>gl", ":Git log --oneline<CR>");
+    end
+    --[[
 local ThePrimeagen_Fugitive = vim.api.nvim_create_augroup("ThePrimeagen_Fugitive", {})
 
 local autocmd = vim.api.nvim_create_autocmd
@@ -27,4 +32,6 @@ autocmd("BufWinEnter", {
     -- needed if i did not set the branch up correctly
     vim.keymap.set("n", "<leader>t", ":Git push -u origin ", opts);
   end,
-})
+}) ]] --
+  }
+}

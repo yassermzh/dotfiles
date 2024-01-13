@@ -31,9 +31,6 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "0" -- maybe 80 columns
 
 
--- disable netrw at the very start of your init.lua
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
 
 -- Case-insensitive searching UNLESS \C or capital in search
 vim.o.ignorecase = true
