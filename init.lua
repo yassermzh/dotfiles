@@ -19,4 +19,4 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappings are correct
 
 require("lazy").setup("plugins")
-
+vim.lsp.set_log_level("debug")
