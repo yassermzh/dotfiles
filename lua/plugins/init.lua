@@ -37,7 +37,6 @@ return {
     lazy = false,
   },
 
-  -- { "davidmh/cspell.nvim", dependencies = { "Joakker/lua-json5" } },
 
   "ntpeters/vim-better-whitespace",
 
@@ -54,4 +53,5 @@ return {
   "kristijanhusak/vim-dadbod-ui",
   "kristijanhusak/vim-dadbod-completion",
 
+  "mg979/vim-visual-multi",
 }
