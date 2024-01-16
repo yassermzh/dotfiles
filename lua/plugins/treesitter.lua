@@ -1,6 +1,7 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
+    dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
     build = ":TSUpdate",
     config = function()
       vim.defer_fn(function()
@@ -24,6 +25,21 @@ return {
             -- Using this option may slow down your editor, and you may see some duplicate highlights.
             -- Instead of true it can also be a list of languages
             additional_vim_regex_highlighting = false,
+          },
+          textobjects = {
+            select = {
+              enable = true,
+              lookahead = true,
+
+              keymaps = {
+                ["l="] = { query = "@assignment.lhs", desc = "Select left hand side of an assignment" },
+                ["r="] = { query = "@assignment.rhs", desc = "Select right hand side of an assignment" },
+                ["af"] = { query = "@call.outer", desc = "Select outer part of a function call" },
+                ["rf"] = { query = "@call.inner", desc = "Select inner part of a function call" },
+                ["am"] = { query = "@function.outer", desc = "Select outer part of a method/function definition" },
+                ["rm"] = { query = "@function.inner", desc = "Select inner part of a method/function definition" },
+              },
+            },
           },
         }
       end, 0)
