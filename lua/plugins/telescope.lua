@@ -32,7 +32,7 @@ return {
           media_files = {
             -- filetypes whitelist
             -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
-            filetypes = { "png", "webp", "jpg", "jpeg" },
+            filetypes = { "png", "webp", "jpg", "jpeg", "svg" },
             find_cmd = "rg" -- find command (defaults to `fd`)
           }
         },
