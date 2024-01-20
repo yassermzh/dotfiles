@@ -4,7 +4,7 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope-live-grep-args.nvim",
-      "nvim-telescope/telescope-frecency.nvim",
+      -- "nvim-telescope/telescope-frecency.nvim",
       { "nvim-telescope/telescope-fzf-native.nvim", build = 'make' },
       "nvim-telescope/telescope-media-files.nvim",
     },
@@ -51,7 +51,7 @@ return {
       -- load_extension, somewhere after setup function:
       -- telescope.load_extension('fzf')
       telescope.load_extension('media_files')
-      telescope.load_extension "frecency"
+      -- telescope.load_extension "frecency"
       telescope.load_extension("live_grep_args")
 
 
