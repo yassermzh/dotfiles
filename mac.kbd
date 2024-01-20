@@ -98,7 +98,7 @@
 (deflayer lNv
   @lDf _    _    _    _    _    _    _    _    _    _     _    _
   _    _    _    _    _    _    _    _    _    _    _     _    _    _
-  _    _    _    @bsp _    _    pgup home @fwd end  _     _    _    _
+  _    _    _    @fwd _    _    pgup home @bsp end  _     _    _    _
   @lUp _    lalt lmet lsft _    pgdn left down up  right  _    _
   @st  _    _    _    lctl _    _    @ent _    _    _     _    _
   _    _    _    _              _              _    _     _    _    _
