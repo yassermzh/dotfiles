@@ -1,7 +1,7 @@
 return {
   {
     "nvimtools/none-ls.nvim",
-    dependecies = {
+    dependencies = {
       "davidmh/cspell.nvim",
     },
     config = function()
@@ -13,7 +13,8 @@ return {
       null_ls.setup({
         sources = {
           null_ls.builtins.formatting.prettierd,
-          cspell.diagnostics
+          cspell.diagnostics,
+          cspell.code_actions,
         },
         on_attach = function(client, bufnr)
           if client.supports_method("textDocument/formatting") then
