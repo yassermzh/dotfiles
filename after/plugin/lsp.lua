@@ -69,3 +69,6 @@ lspconfig.tsserver.setup({
 })
 
 
+lspconfig.intelephense.setup({
+  capabilities = capabilities
+})
