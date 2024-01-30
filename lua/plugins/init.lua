@@ -9,12 +9,7 @@ return {
         variant = 'auto',
       })
 
-      function ColorMyPencils(color)
-        color = color or "rose-pine"
-        vim.cmd.colorscheme(color)
-      end
-
-      ColorMyPencils()
+      vim.cmd.colorscheme("rose-pine-dawn")
     end
   },
   "mbbill/undotree",
