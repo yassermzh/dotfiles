@@ -34,7 +34,7 @@ return {
             mappings = {         -- extend mappings
               i = {
                 ["<C-k>"] = lga_actions.quote_prompt(),
-                ["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
+                ["<C-h>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
               },
             },
           },
@@ -49,6 +49,8 @@ return {
           path_display = { truncate = 2 },
           mappings = {
             i = {
+              ["<C-n>"] = "preview_scrolling_left",
+              ["<C-o>"] = "preview_scrolling_right",
               ["<C-e>"] = "move_selection_next",
               ["<C-i>"] = "move_selection_previous",
             }
