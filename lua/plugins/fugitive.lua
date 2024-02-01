@@ -3,7 +3,9 @@ return {
     "tpope/vim-fugitive",
     config = function()
       vim.keymap.set('n', '<leader>gg', ':Git<CR>')
-      vim.keymap.set("n", "<leader>gl", ":Git log --oneline<CR>");
+      vim.keymap.set("n", "<leader>gll", ":Git log --oneline<CR>");
+      vim.keymap.set("n", "<leader>glp", ":Git log -p %<CR>");
+      vim.keymap.set("n", "<leader>ge", ":Gedit<CR>");
     end
     --[[
 local ThePrimeagen_Fugitive = vim.api.nvim_create_augroup("ThePrimeagen_Fugitive", {})
