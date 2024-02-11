@@ -38,7 +38,7 @@ return {
 
   "lifepillar/vim-solarized8",
 
-  "easymotion/vim-easymotion",
+  -- "easymotion/vim-easymotion",
 
   "ThePrimeagen/vim-be-good",
 
