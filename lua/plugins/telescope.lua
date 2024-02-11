@@ -14,7 +14,7 @@ return {
       vim.keymap.set('n', '<C-p>', builtin.git_files, {})
       -- vim.keymap.set('n', '<leader>ps', builtin.grep_string)
       vim.keymap.set('n', '<leader>vh', builtin.help_tags, { desc = "help tags" })
-      vim.keymap.set("n", "<leader>p<leader>", "<cmd>Telescope resume<CR>", { desc = "Last Search" })
+      vim.keymap.set("n", "<leader>pr", "<cmd>Telescope resume<CR>", { desc = "Last Search" })
 
       -- vim.keymap.set("n", "<leader><leader>", "<Cmd>Telescope frecency<CR>")
 
