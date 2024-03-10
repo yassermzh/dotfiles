@@ -21,6 +21,9 @@ return {
       require("harpoon").setup({
         global_settings = {
           mark_branch = true
+        },
+        menu = {
+          width = 90
         }
       })
       vim.keymap.set("n", "<leader>a", function() require("harpoon.mark").add_file() end,
