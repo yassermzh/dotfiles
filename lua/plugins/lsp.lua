@@ -81,10 +81,11 @@ M.config = function()
     mapping = cmp.mapping.preset.insert({
       ['<Up>'] = cmp_mapping_ic(cmp.mapping.select_prev_item(cmp_select)),
       ['<Down>'] = cmp_mapping_ic(cmp.mapping.select_next_item(cmp_select)),
-      ['<CR>'] = cmp.mapping(cmp.mapping.confirm({ select = true, }), { 'i' }),
-      ['<C-i>'] = cmp_mapping_ic(cmp.mapping.select_prev_item(cmp_select)),
-      ['<C-e>'] = cmp_mapping_ic(cmp.mapping.select_next_item(cmp_select)),
-      ['<C-o>'] = cmp_mapping_ic(cmp.mapping.confirm({ select = true })),
+      -- ['<CR>'] = cmp.mapping(cmp.mapping.confirm({ select = true, }), { 'i' }),
+      ['<CR>'] = cmp.mapping(cmp.mapping.confirm({ select = true, }), { 'i', 'c' }),
+      -- ['<C-i>'] = cmp_mapping_ic(cmp.mapping.select_prev_item(cmp_select)),
+      -- ['<C-e>'] = cmp_mapping_ic(cmp.mapping.select_next_item(cmp_select)),
+      -- ['<C-o>'] = cmp_mapping_ic(cmp.mapping.confirm({ select = true })),
       ['<C-Space>'] = cmp_mapping_ic(cmp.mapping.complete()),
       ['<C-n>'] = cmp_mapping_ic(cmp.mapping.abort()),
     }),
@@ -130,8 +131,8 @@ M.config = function()
   -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
   cmp.setup.cmdline(':', {
     mapping = cmp.mapping.preset.cmdline({
-      ['<C-i>'] = cmp_mapping_ic(cmp.mapping.select_prev_item(cmp_select)),
-      ['<C-e>'] = cmp_mapping_ic(cmp.mapping.select_next_item(cmp_select)),
+      -- ['<C-i>'] = cmp_mapping_ic(cmp.mapping.select_prev_item(cmp_select)),
+      -- ['<C-e>'] = cmp_mapping_ic(cmp.mapping.select_next_item(cmp_select)),
     }),
     sources = cmp.config.sources({
       { name = 'path' }
