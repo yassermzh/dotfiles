@@ -11,6 +11,7 @@ local M = {
     "hrsh7th/cmp-cmdline",
     "L3MON4D3/LuaSnip",
     "saadparwaiz1/cmp_luasnip",
+    "Exafunction/codeium.vim",
   }
 }
 
@@ -95,11 +96,15 @@ M.config = function()
           return require("cmp").lsp.CompletionItemKind.Text ~= entry:get_kind()
         end
       },
+      { name = "codeium" },
       { name = 'luasnip' },
       { name = 'vim-dadbod-completion' },
     }, {
       { name = 'buffer' },
-    })
+    }),
+    completion = {
+      autocomplete = false,
+    },
   })
 
   -- Set configuration for specific filetype.
@@ -116,7 +121,10 @@ M.config = function()
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
       { name = 'buffer' }
-    }
+    },
+    completion = {
+      autocomplete = false,
+    },
   })
 
   -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
@@ -129,7 +137,10 @@ M.config = function()
       { name = 'path' }
     }, {
       { name = 'cmdline' }
-    })
+    }),
+    completion = {
+      autocomplete = false,
+    },
   })
 
   -- Set up lspconfig.
