@@ -11,7 +11,11 @@ return {
 
       require("nvim-tree").setup({
         view = {
-          side = "right"
+          side = "right",
+          adaptive_size = true
+        },
+        filters = {
+          dotfiles = false
         },
         -- disable rendering icons
         renderer = {
