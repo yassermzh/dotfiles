@@ -5,27 +5,15 @@ return {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope-live-grep-args.nvim",
       -- "nvim-telescope/telescope-frecency.nvim",
-      { "nvim-telescope/telescope-fzf-native.nvim", build = 'make' },
+      -- { "nvim-telescope/telescope-fzf-native.nvim", build = 'make' },
       "nvim-telescope/telescope-media-files.nvim",
     },
     config = function()
       local builtin = require('telescope.builtin')
-      vim.keymap.set('n', '<leader>pf', builtin.find_files, { desc = "find files" })
-      vim.keymap.set('n', '<C-p>', builtin.git_files, {})
-      -- vim.keymap.set('n', '<leader>ps', builtin.grep_string)
-      vim.keymap.set('n', '<leader>vh', builtin.help_tags, { desc = "help tags" })
-      vim.keymap.set("n", "<leader>pr", "<cmd>Telescope resume<CR>", { desc = "Last Search" })
-
-      -- vim.keymap.set("n", "<leader><leader>", "<Cmd>Telescope frecency<CR>")
 
       local telescope = require("telescope")
       local lga_actions = require("telescope-live-grep-args.actions")
       local live_grep_args_shortcuts = require("telescope-live-grep-args.shortcuts")
-
-      vim.keymap.set("n", "<leader>ps", live_grep_args_shortcuts.grep_word_under_cursor,
-        { desc = "grep word under cursor" })
-      vim.keymap.set("n", "<leader>pS", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
-        { desc = "live grep" })
 
       telescope.setup({
         extensions = {
@@ -46,6 +34,13 @@ return {
           }
         },
         defaults = {
+          layout_config = {
+            prompt_position = "bottom",
+            vertical = {
+              width = 1,
+              -- height = 0.9,
+            }
+          },
           path_display = { truncate = 2 },
           mappings = {
             i = {
@@ -67,6 +62,22 @@ return {
 
 
       -- require("telescope.builtin").help_tags()
+
+      vim.keymap.set('n', '<leader>pf', builtin.find_files, { desc = "find files" })
+      vim.keymap.set('n', '<C-p>', builtin.git_files, { desc = "git files" })
+      -- vim.keymap.set('n', '<C-p>', function
+      --    builtin.git_files({layout_strategy = "vertical", layout_config ={ width = 0.9 } }, { desc = "git files" })
+      --  end
+      -- )
+      -- vim.keymap.set('n', '<leader>ps', builtin.grep_string)
+      vim.keymap.set('n', '<leader>vh', builtin.help_tags, { desc = "help tags" })
+      vim.keymap.set("n", "<leader>pr", "<cmd>Telescope resume<CR>", { desc = "Last Search" })
+      -- vim.keymap.set("n", "<leader><leader>", "<Cmd>Telescope frecency<CR>")
+      vim.keymap.set("n", "<leader>ps", live_grep_args_shortcuts.grep_word_under_cursor,
+        { desc = "grep word under cursor" })
+      vim.keymap.set("n", "<leader>pS", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
+        { desc = "live grep" })
+
     end
   }
 }
