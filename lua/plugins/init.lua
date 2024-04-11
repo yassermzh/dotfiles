@@ -44,9 +44,6 @@ return {
 
   "tpope/vim-surround",
 
-  "tpope/vim-dadbod",
-  "kristijanhusak/vim-dadbod-ui",
-  "kristijanhusak/vim-dadbod-completion",
 
   "mg979/vim-visual-multi",
 }
