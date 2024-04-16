@@ -48,6 +48,10 @@ return {
               ["<C-o>"] = "preview_scrolling_right",
               ["<C-e>"] = "move_selection_next",
               ["<C-i>"] = "move_selection_previous",
+              ["<C-x>"] = require("telescope.actions").delete_buffer,
+            },
+            n = {
+              ["<C-x>"] = require("telescope.actions").delete_buffer,
             }
           }
         },
@@ -64,6 +68,7 @@ return {
       -- require("telescope.builtin").help_tags()
 
       vim.keymap.set('n', '<leader>pf', builtin.find_files, { desc = "find files" })
+      vim.keymap.set('n', '<leader>b', builtin.buffers, { desc = "list buffers" })
       vim.keymap.set('n', '<C-p>', builtin.git_files, { desc = "git files" })
       -- vim.keymap.set('n', '<C-p>', function
       --    builtin.git_files({layout_strategy = "vertical", layout_config ={ width = 0.9 } }, { desc = "git files" })
