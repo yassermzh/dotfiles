@@ -26,11 +26,6 @@ return {
   },
 
 
-  {
-    'numToStr/Comment.nvim',
-    opts = {},
-    lazy = false,
-  },
 
 
   "ntpeters/vim-better-whitespace",
@@ -43,7 +38,6 @@ return {
   "ThePrimeagen/vim-be-good",
 
   "tpope/vim-surround",
-
 
   "mg979/vim-visual-multi",
 }
