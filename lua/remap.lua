@@ -96,6 +96,7 @@ vim.keymap.set("n", "<leader>n", "<Cmd>nohlsearch<CR>", { noremap = true, silent
 vim.api.nvim_set_keymap("v", "<leader>ri", [[ <Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]],
   { noremap = true, silent = true, expr = false })
 
+vim.keymap.set("n", "<leader>ll", ':LspRestart<CR>', { noremap = true, silent = true })
 
 -- vim.keymap.set('c', '<C-i>', '<Up>', { noremap = true, silent = true })
 -- vim.keymap.set('c', '<C-e>', '<Down>', { noremap = true, silent = true })
