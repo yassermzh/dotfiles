@@ -1,7 +1,7 @@
 return {
   {
     "kevinhwang91/nvim-ufo",
-    dependencies = { "kevinhwang91/promise-lib" },
+    dependencies = { "kevinhwang91/promise-async" },
     config = function()
       local ftMap = {
         vim = 'indent',
