@@ -32,6 +32,7 @@ return {
             { desc = "stage hunk" })
           map('v', '<leader>hr', function() gs.reset_hunk { vim.fn.line('.'), vim.fn.line('v') } end,
             { desc = "reset hunk" })
+          map('n', '<leader>hr', function() gs.reset_hunk() end, { desc = "reset hunk" })
           map('n', '<leader>hS', gs.stage_buffer, { desc = "stage buffer" })
           map('n', '<leader>hu', gs.undo_stage_hunk, { desc = "undo stage hunk" })
           map('n', '<leader>hR', gs.reset_buffer, { desc = "reset buffer" })
