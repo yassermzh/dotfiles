@@ -77,6 +77,7 @@ return {
       -- vim.keymap.set('n', '<leader>ps', builtin.grep_string)
       vim.keymap.set('n', '<leader>vh', builtin.help_tags, { desc = "help tags" })
       vim.keymap.set("n", "<leader>pr", "<cmd>Telescope resume<CR>", { desc = "Last Search" })
+      vim.keymap.set("n", "<leader><leader>", "<cmd>Telescope<CR>", { desc = "Telescope" })
       -- vim.keymap.set("n", "<leader><leader>", "<Cmd>Telescope frecency<CR>")
       vim.keymap.set("n", "<leader>ps", live_grep_args_shortcuts.grep_word_under_cursor,
         { desc = "grep word under cursor" })
