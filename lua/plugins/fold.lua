@@ -27,10 +27,10 @@ return {
       end
 
       require('ufo').setup({
-        close_fold_kinds_for_ft = { 'imports', 'comment' },
-        provider_selector = function(bufnr, filetype, buftype)
-          return ftMap[filetype]
-        end
+        close_fold_kinds_for_ft = { default = { 'imports', 'comment' }, },
+        -- provider_selector = function(bufnr, filetype, buftype)
+        --   return ftMap[filetype]
+        -- end
       })
 
 
