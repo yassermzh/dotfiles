@@ -19,7 +19,7 @@ M.config = function()
   require("fidget").setup({})
   require('mason').setup({})
   require('mason-lspconfig').setup({
-    ensure_installed = { 'tsserver', 'eslint', 'lua_ls', 'intelephense' }
+    ensure_installed = { 'tsserver', 'eslint', 'lua_ls', 'phpactor' }
   })
 
   local lspconfig = require("lspconfig")
