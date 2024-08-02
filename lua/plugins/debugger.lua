@@ -1,10 +1,9 @@
 return {
   {
-    "mfussenegger/nvim-dap",
+    "rcarriga/nvim-dap-ui",
     dependencies = {
-      "nvim-telescope/telescope-dap.nvim",
-      "rcarriga/nvim-dap-ui",
-      "theHamsta/nvim-dap-virtual-text",
+      "mfussenegger/nvim-dap",
+      "nvim-neotest/nvim-nio"
     },
     config = function()
       local dap = require("dap")
@@ -38,6 +37,21 @@ return {
         args = { os.getenv('HOME') .. '/works/vscode-firefox-debug/dist/adapter.bundle.js' },
       }
 
+      dap.adapters.php = {
+        type = 'executable',
+        command = 'node',
+        args = { '/Users/yasser/works/spreadgroup/vscode-php-debug/out/phpDebug.js' }
+      }
+
+      dap.configurations.php = {
+        {
+          type = 'php',
+          request = 'launch',
+          name = 'Listen for Xdebug',
+          port = 9003
+        }
+      }
+
       dap.configurations.typescriptreact = {
         {
           name = 'Debug with Firefox',
@@ -55,7 +69,7 @@ return {
         {
           name = 'Debug with Firefox',
           type = 'firefox',
-         request = 'launch',
+          request = 'launch',
           reAttach = true,
           url = 'http://localhost:5000',
           -- url = 'https://wizard-dev.teamshirts.de/de/DE/generic',
