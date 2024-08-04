@@ -108,10 +108,11 @@ M.config = function()
   })
 
   -- Setup up vim-dadbod
-  cmp.setup.filetype({ "sql" }, {
+  cmp.setup.filetype({ "sql", "mysql" }, {
     sources = {
       { name = "vim-dadbod-completion" },
       { name = "buffer" },
+      { name = "codeium" },
     },
   })
 
