@@ -99,12 +99,19 @@ M.config = function()
       },
       { name = "codeium" },
       { name = 'luasnip' },
-      { name = 'vim-dadbod-completion' },
     }, {
       { name = 'buffer' },
     }),
     completion = {
       autocomplete = false,
+    },
+  })
+
+  -- Setup up vim-dadbod
+  cmp.setup.filetype({ "sql" }, {
+    sources = {
+      { name = "vim-dadbod-completion" },
+      { name = "buffer" },
     },
   })
 
