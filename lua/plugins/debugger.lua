@@ -114,7 +114,7 @@ return {
       dap.adapters.php = {
         type = 'executable',
         command = 'node',
-        args = { os.getenv("HOME") .. ' /works/spreadgroup/vscode-php-debug/out/phpDebug.js' }
+        args = { '/Users/yasser/works/spreadgroup/vscode-php-debug/out/phpDebug.js' }
       }
 
       dap.configurations.php = {
