@@ -35,7 +35,7 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 -- end)
 
 
-vim.keymap.set("n", "<C-b>", vim.cmd.NvimTreeFindFileToggle, { desc = "Toggle file explorer" })
+vim.keymap.set("n", "<leader>b", vim.cmd.NvimTreeFindFileToggle, { desc = "Toggle file explorer" })
 vim.keymap.set("n", "<leader>w", ':w<CR>', { desc = "Save file" })
 
 vim.keymap.set("n", "<leader>z", "<cmd>only<CR>", { desc = "Close other buffers" })
@@ -44,6 +44,14 @@ vim.keymap.set({ 'n', 'v' }, 'n', 'h', { noremap = true }) -- left
 vim.keymap.set({ 'n', 'v' }, 'e', 'j', { noremap = true }) -- down
 vim.keymap.set({ 'n', 'v' }, 'i', 'k', { noremap = true }) -- up
 vim.keymap.set({ 'n', 'v' }, 'o', 'l', { noremap = true }) -- right
+vim.keymap.set('n', '<C-w>N', '<C-w>H', { noremap = true, silent = true, desc = "Move window to left" })
+vim.keymap.set('n', '<C-w>E', '<C-w>J', { noremap = true, silent = true, desc = "Move window to down" })
+vim.keymap.set('n', '<C-w>I', '<C-w>K', { noremap = true, silent = true, desc = "Move window to up" })
+vim.keymap.set('n', '<C-w>O', '<C-w>L', { noremap = true, silent = true, desc = "Move window to right" })
+vim.keymap.set('n', '<C-w>n', '<C-w>h', { noremap = true, silent = true, desc = "Go to left window" })
+vim.keymap.set('n', '<C-w>e', '<C-w>j', { noremap = true, silent = true, desc = "Go to down window" })
+vim.keymap.set('n', '<C-w>i', '<C-w>k', { noremap = true, silent = true, desc = "Go to up window" })
+vim.keymap.set('n', '<C-w>o', '<C-w>l', { noremap = true, silent = true, desc = "Go to right window" })
 vim.keymap.set('n', 't', 'i', { noremap = true })          -- insert mode
 vim.keymap.set('n', 'T', 'I', { noremap = true })          -- insert mode
 vim.keymap.set('n', 'l', 'o', { noremap = true })          -- newline below
