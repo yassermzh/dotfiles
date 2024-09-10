@@ -72,7 +72,11 @@ lspconfig.tsserver.setup({
 lspconfig.phpactor.setup {
   capabilities = capabilities,
   init_options = {
+    -- ["language_server_phpstan.enabled"] = false,
+    -- ["language_server_psalm.enabled"] = false,
     ["language_server_php_cs_fixer.enabled"] = true, -- Enable PHP CS Fixer
     ["language_server_php_cs_fixer.bin"] = "/Users/yasser/works/spreadgroup/backend/vendor/friendsofphp/php-cs-fixer/php-cs-fixer",
+    -- ["php_code_sniffer.enabled"] = true,
+    -- ["php_code_sniffer.bin"] = "/Users/yasser/works/spreadgroup/backend/vendor/squizlabs/php_codesniffer/bin/phpcs"
   }
 }
