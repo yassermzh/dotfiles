@@ -38,4 +38,4 @@ ln -sf "$DOTFILES/dunst/dunstrc" "$XDG_CONFIG_HOME/dunst/dunstrc"
 cp "$DOTFILES/libinput-gestures.conf" "$XDG_CONFIG_HOME"
 
 # lf
-ln -s "$DOTFILES/lf" "$XDG_CONFIG_HOME"
+ln -sf "$DOTFILES/lf" "$XDG_CONFIG_HOME"
