@@ -16,11 +16,11 @@ function send_notification {
 
 case $1 in
     up)
-    brightnessctl set 801+ -d intel_backlight > /dev/null
+    brightnessctl set +10% > /dev/null
     send_notification
     ;;
     down)
-    brightnessctl set 801- -d intel_backlight > /dev/null
+    brightnessctl set 10%- > /dev/null
     send_notification
     ;;
 esac
