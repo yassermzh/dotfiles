@@ -1,0 +1,6 @@
+[Unit]
+Description=Check battery level and notify when charging
+
+[Service]
+ExecStart=/home/yas/.config/i3/scripts/battery-check.sh
+
