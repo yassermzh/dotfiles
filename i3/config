@@ -262,7 +262,9 @@ for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 
 exec --no-startup-id "libinput-gestures-setup start"
+exec --no-startup-id clipmenud
 
+bindsym $mod+v exec clipmenu
 
 ## Include
 include $XDG_CONFIG_HOME/i3/include/*.conf
