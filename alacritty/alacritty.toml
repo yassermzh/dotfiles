@@ -1,0 +1,10 @@
+[colors.primary]
+background = "#fdf6e3"
+foreground = "#657b83"
+
+[window]
+dynamic_title = true
+
+[window.padding]
+x = 2
+y = 2
