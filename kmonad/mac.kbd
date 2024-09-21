@@ -1,0 +1,155 @@
+;; See keymap/tutorial.kbd for a more complete tutorial
+
+(defcfg
+  input (iokit-name "Apple Internal Keyboard / Trackpad")
+  output (kext)
+  fallthrough true
+  allow-cmd true
+)
+
+
+;; lmet -> cmd
+;; lalt -> option
+;; fn   -> fn
+;; grv == `
+
+
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft up
+  fn   lctl lalt lmet           spc            rmet ralt left down rght
+)
+
+;; Below, I use `around' to compose `layer-toggle' with `fn' (instead
+;; of using `layer-toggle' directly) so that the `fn' keypress
+;; actually gets emitted. This matters when using an application that
+;; can use `fn' as a modifier (like Emacs).
+
+(defalias
+  ;; layer jumping
+  fn  (around (layer-toggle apple) fn)
+  lNv (tap-hold 250 spc (layer-toggle lNv))
+  lNm (tap-hold 250 a (layer-toggle lNm))
+  ;;lS (tap-next ; (layer-toggle lS))
+  ;;lS (tap-hold 250 ; (layer-toggle lS))
+  ;;lS (tap-hold-next 2500 ; (layer-toggle lS))
+  lS (tap-hold-next-release 250 ; (layer-toggle lS))
+
+  ;; home-row modifiers
+  a_s (tap-hold-next-release 250 s lalt)
+  c_m (tap-hold-next-release 250 m lctl)
+
+  m_d (tap-hold-next-release 250 d lmet)
+  a_l (tap-hold-next-release 250 l lalt)
+
+  s_f (tap-hold-next-release 250 f lsft)
+  m_k (tap-hold-next-release 250 k lmet)
+
+  c_v (tap-hold-next-release 250 v lctl)
+  ;;m_; (tap-hold-next-release 250 ; lmet)
+
+  s_j (tap-hold-next-release 250 j lsft)
+
+  ;; space cadet
+  lcd (tap-hold-next 250 \( lsft)
+  rcd (tap-hold-next 250 \) lsft)
+
+  ;; other
+  cpl (tap-hold-next 250 esc lctl)
+  bsp (tap-hold-next 250 bspc lmet)
+  ent (tap-hold-next 250 enter rmet)
+
+  fwd (around fn delete)
+  ;;fwd (tap-hold 200 (around fn delete) :timeout-button (repeat-key (around fn delete)))
+
+  lUp (layer-switch lUpperCase)
+  lCk (layer-switch colemak)
+
+  ;; cap letter o
+  O S-;
+
+  lDf (layer-switch default)
+  st (cmd-button "/Users/yasser/.config/kmonad/state.sh colemak")
+)
+
+;; home row based on https://precondition.github.io/home-row-mods
+
+(deflayer default
+  @lCk _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  @cpl _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _              _              _    _    _    _    _
+)
+
+(deflayer colemak
+  _    brdn brup lp   mctl bldn blup prev pp   next mute vold volu
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  @cpl @lNm @a_s @m_d @s_f _    _    @s_j @m_k @a_l @lS  _    _
+  @lcd _    _    _    @c_v _    _    @c_m _    _    _    @rcd _
+  @fn  _    _    @bsp           @lNv           @ent _    _    _    _
+)
+
+(deflayer lNv
+  @lDf _    _    _    _    _    _    _    _    _    _     _    _
+  _    _    _    _    _    _    _    _    _    _    _     _    _    _
+  _    _    _    @fwd _    _    pgup home @bsp end  _     _    _    _
+  @lUp _    lalt lmet lsft _    pgdn left down up  right  _    _
+  @st  _    _    _    lctl _    _    @ent _    _    _     _    _
+  _    _    _    _              _              _    _     _    _    _
+)
+
+(deflayer lNm
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    \_   7    8    9    *    _    _    _
+  lctl _    lalt lmet lsft _    =    4    5    6    +    `    _
+  _    _    _    _    lctl _    -    1    2    3    \    _    _
+  _    _    _    _              0              .    _    _    _    _
+)
+
+(deflayer lS
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    !    @    {    }    |    _    _    _    _    _    _    _    _
+  _    #    $    \(  \)    &    _    '    "    `    _    _    _
+  _    %    ^    [    ]    ~    _    @ent _    _    _    _    _
+  _    _    _    _              _         _    _    _    _    _
+)
+
+(deflayer lUpperCase
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    Q    W    E    R    T    Y    U    I    O    P    _    _    _
+  @lCk A    S    D    F    G    H    J    K    L    @O   _    _
+  _    Z    X    C    V    B    N    M    _    _    _    _    _
+  _    _    _    _              _              _    _    _    _    _
+)
+
+
+(deflayer transparent
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _              _              _    _    _    _    _
+)
+
+(deflayer apple
+  ;; this is a safe-guard!!!
+  ;; don't change because if the Keyboard
+  ;; get's messed up this will set it to
+  ;; the hardware default
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft up
+  fn   lctl lalt lmet           spc            rmet ralt left down rght
+)
