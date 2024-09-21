@@ -1,4 +1,5 @@
 return {
+  'nvim-tree/nvim-web-devicons',
   {
     'rose-pine/neovim',
     name = 'rose-pine',
