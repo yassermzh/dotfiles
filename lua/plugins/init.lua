@@ -1,31 +1,33 @@
 return {
   'nvim-tree/nvim-web-devicons',
+  'shaunsingh/solarized.nvim',
   {
     'rose-pine/neovim',
     name = 'rose-pine',
     config = function()
       require('rose-pine').setup({
-        disable_background = false,
+        -- disable_background = false,
         --- @usage 'auto'|'main'|'moon'|'dawn'
-        variant = 'auto',
+        variant = 'dawn',
       })
 
+      -- vim.cmd.colorscheme("rose-pine-moon")
       vim.cmd.colorscheme("rose-pine-dawn")
-      local function set_color_scheme_based_on_time()
-        local hour = tonumber(os.date("%H"))
-        if hour >= 6 and hour < 18 then
-          -- Set your daytime colorscheme
-          vim.cmd("colorscheme rose-pine-dawn")
-        else
-          -- Set your nighttime colorscheme
-          vim.cmd("colorscheme rose-pine-moon")
-        end
-      end
-
-      vim.api.nvim_create_autocmd("VimEnter", {
-        pattern = "*",
-        callback = set_color_scheme_based_on_time,
-      })
+      -- local function set_color_scheme_based_on_time()
+      --   local hour = tonumber(os.date("%H"))
+      --   if hour >= 6 and hour < 18 then
+      --     -- Set your daytime colorscheme
+      --     vim.cmd("colorscheme rose-pine-dawn")
+      --   else
+      --     -- Set your nighttime colorscheme
+      --     vim.cmd("colorscheme rose-pine-moon")
+      --   end
+      -- end
+      --
+      -- vim.api.nvim_create_autocmd("VimEnter", {
+      --   pattern = "*",
+      --   callback = set_color_scheme_based_on_time,
+      -- })
     end
   },
   "mbbill/undotree",
