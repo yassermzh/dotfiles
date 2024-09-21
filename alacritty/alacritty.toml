@@ -1,6 +1,11 @@
-[colors.primary]
-background = "#fdf6e3"
-foreground = "#657b83"
+# [colors.primary]
+# background = "#fdf6e3"
+# foreground = "#657b83"
+#
+# ~/.config/alacritty/alacritty.toml
+import = [
+    "~/.config/alacritty/themes/themes/rose-pine-moon.toml"
+]
 
 [window]
 dynamic_title = true
@@ -8,3 +13,7 @@ dynamic_title = true
 [window.padding]
 x = 2
 y = 2
+
+[env]
+# TERM = "xterm-256color"
+

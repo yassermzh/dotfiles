@@ -2,7 +2,7 @@
 #xrandr --auto
 
 
-urxvtd -o -q -f
+# urxvtd -o -q -f
 
 xrdb -merge ~/.config/X11/.Xresources
 xrdb -merge ~/.config/X11/solarized.theme

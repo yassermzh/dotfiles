@@ -38,7 +38,8 @@ exec --no-startup-id nm-applet
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+# bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -227,6 +228,7 @@ client.urgent 		$red1 $red1 $white2 $red1 $red1
 client.placeholder 	#000000 #0c0c0c $white2 #000000 0c0c0c
 
 for_window [class="URxvt*"] border pixel 1
+for_window [class="Alacritty"] border pixel 1
 
 
 ## i3bar and i3status
