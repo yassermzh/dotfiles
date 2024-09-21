@@ -8,6 +8,9 @@ ln -sf "$HOME/dotfiles/nvim/init.vim" "$HOME/.config/nvim/init.vim"
 rm -rf "$HOME/.config/alacritty"
 ln -sf "$HOME/dotfiles/alacritty" "$HOME/.config/alacritty"
 
+rm -rf "$HOME/.config/kmonad"
+ln -sf "$HOME/dotfiles/kmonad" "$HOME/.config/kmonad"
+
 rm -rf "$HOME/.config/X11"
 ln -s "$HOME/dotfiles/X11" "$HOME/.config"
 
