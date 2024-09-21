@@ -1,13 +1,13 @@
 ;; See keymap/tutorial.kbd for a more complete tutorial
 
 (defcfg
-  ;; For Linux  
-  input  (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")   
-  output (uinput-sink "My KMonad output"     
-     ;; To understand the importance of the following line, see the section on     
-     ;; Compose-key sequences at the near-bottom of this file.     
-     "sleep 1 && setxkbmap -option compose:ralt")   
-     cmp-seq ralt    ;; Set the compose key to `RightAlt'   
+  ;; For Linux
+  input  (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
+  output (uinput-sink "My KMonad output"
+     ;; To understand the importance of the following line, see the section on
+     ;; Compose-key sequences at the near-bottom of this file.
+     "sleep 1 && setxkbmap -option compose:ralt")
+     cmp-seq ralt    ;; Set the compose key to `RightAlt'
      cmp-seq-delay 5 ;; 5ms delay between each compose-key sequence press
 
   fallthrough true
@@ -46,15 +46,15 @@
 
   ;; home-row modifiers
   a_r (tap-hold-next-release 250 r lalt)
-  c_h (tap-hold-next-release 250 h lctl)
+  m_h (tap-hold-next-release 250 h lmet)
 
-  m_s (tap-hold-next-release 250 s lmet)
+  c_s (tap-hold-next-release 250 s lctl)
   a_i (tap-hold-next-release 250 i lalt)
 
   s_n (tap-hold-next-release 250 n lsft)
-  m_e (tap-hold-next-release 250 e lmet)
+  c_e (tap-hold-next-release 250 e lctl)
 
-  c_v (tap-hold-next-release 250 v lctl)
+  m_v (tap-hold-next-release 250 v lmet)
 
   s_t (tap-hold-next-release 250 t lsft)
 
@@ -83,16 +83,16 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   @cpl _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _ 
+  _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _              _              _    _    _    _    _
 )
 
 (deflayer colemak
-  _    _    _    _    _    _    _    _    _    _    _    _    _  
+  _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    q    w    f    p    b    j    l    u    y    ;    _    _    _
-  @cpl @lNm @a_r @m_s @s_t g    m    @s_n @m_e @a_i @lS  _    _
-  @lcd x    c    d    @c_v z    k    @c_h _    _    _    @rcd
+  @cpl @lNm @a_r @c_s @s_t g    m    @s_n @c_e @a_i @lS  _    _
+  @lcd x    c    d    @m_v z    k    @m_h _    _    _    @rcd
   _    _    @bsp           @lNv           @ent _    _    _    _
 )
 
@@ -110,7 +110,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    \_   7    8    9    *    _    _    _
   lctl _    lalt lmet lsft _    =    4    5    6    +    `    _
-  _    _    _    _    lctl _    -    1    2    3    \    _ 
+  _    _    _    _    lctl _    -    1    2    3    \    _
   _    _    _              0              .    _    _    _    _
 )
 
@@ -119,7 +119,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    !    @    {    }    |    _    _    _    _    _    _    _    _
   _    #    $    \(  \)    &    _    '    "    `    _    _    _
-  _    %    ^    [    ]    ~    _    @ent _    _    _    _   
+  _    %    ^    [    ]    ~    _    @ent _    _    _    _
   _    _    _              _         _    _    _    _    _
 )
 
@@ -128,7 +128,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    Q    W    F    P    B    J    L    U    Y    :    _    _    _
   @lCk A    R    S    T    G    M    N    E    I    @O   _    _
-  _    X    C    D    V    Z    K    H    _    _    _    _  
+  _    X    C    D    V    Z    K    H    _    _    _    _
   _    _    _              _              _    _    _    _    _
 )
 
@@ -138,7 +138,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _ 
+  _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _              _              _    _    _    _    _
 )
 
