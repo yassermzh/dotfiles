@@ -2,9 +2,9 @@
 ########
 # nvim #
 ########
-mkdir -p "$HOME/.config/nvim"
-mkdir -p "$HOME/.config/nvim/undo"
-ln -sf "$HOME/dotfiles/nvim/init.vim" "$HOME/.config/nvim/init.vim"
+rm -rf "$HOME/.config/nvim"
+ln -sf "$HOME/dotfiles/nvim" "$HOME/.config/nvim"
+
 rm -rf "$HOME/.config/alacritty"
 ln -sf "$HOME/dotfiles/alacritty" "$HOME/.config/alacritty"
 
