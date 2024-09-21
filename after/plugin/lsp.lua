@@ -43,7 +43,7 @@ local function filterDTS(value)
 end
 
 
-lspconfig.tsserver.setup({
+lspconfig.ts_ls.setup({
   capabilities = capabilities,
   handlers = {
     -- https://github.com/typescript-language-server/typescript-language-server/issues/216
