@@ -21,11 +21,13 @@ ln -sf "$HOME/dotfiles/zsh/aliases" "$HOME/.config/zsh/aliases"
 rm -rf "$HOME/.config/zsh/external"
 ln -sf "$HOME/dotfiles/zsh/external" "$HOME/.config/zsh"
 
-######## 
-# tmux # 
 ########
-mkdir -p "$XDG_CONFIG_HOME/tmux"
-ln -sf "$DOTFILES/tmux/tmux.conf" "$XDG_CONFIG_HOME/tmux/tmux.conf"
+# tmux #
+########
+# mkdir -p "$XDG_CONFIG_HOME/tmux"
+rm -rf "$HOME/.config/tmux"
+# ln -sf "$DOTFILES/tmux/tmux.conf" "$XDG_CONFIG_HOME/tmux/tmux.conf"
+ln -s "$HOME/dotfiles/tmux" "$HOME/.config"
 
 
 ######
