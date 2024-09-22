@@ -10,6 +10,11 @@ return {
       vim.g.loaded_netrwPlugin = 1
 
       require("nvim-tree").setup({
+        hijack_netrw = true,        -- Deaktiviert netrw und verwendet nvim-tree stattdessen
+        hijack_cursor = true,       -- Der Cursor bleibt in nvim-tree
+        sync_root_with_cwd = false, -- Wechselt nicht automatisch das Arbeitsverzeichnis
+        respect_buf_cwd = true,     -- Öffnet das Arbeitsverzeichnis des aktuellen Buffers
+        -- keine Option zum automatischen Öffnen definieren
         view = {
           side = "right",
           adaptive_size = true
@@ -21,9 +26,9 @@ return {
         renderer = {
           icons = {
             show = {
-              file = false,
+              file = true,
               folder = false,
-              folder_arrow = false,
+              folder_arrow = true,
               git = true
             }
           }
