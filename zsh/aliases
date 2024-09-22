@@ -27,3 +27,5 @@ function light() {
   ln -fs ~/.config/alacritty/themes/themes/rose-pine-dawn.toml ~/.config/alacritty/themes/themes/_active.toml
   touch ~/.config/alacritty/alacritty.toml
 }
+
+alias plist="lsof -i -l -n | grep LISTEN"
