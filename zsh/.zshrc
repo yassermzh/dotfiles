@@ -38,3 +38,5 @@ bindkey -v
 export KEYTIMEOUT=1
 
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.symfony5/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
