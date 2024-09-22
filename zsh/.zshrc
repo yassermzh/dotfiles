@@ -20,19 +20,18 @@ setopt PUSHD_SILENT
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/dotfiles/zsh/external/bd.zsh
-source /usr/share/nvm/init-nvm.sh  
 
 if [ $(command -v "fzf") ]; then
-   source /usr/share/fzf/completion.zsh 
+   source /usr/share/fzf/completion.zsh
    source /usr/share/fzf/key-bindings.zsh
 fi
 
 
 source "$XDG_CONFIG_HOME/zsh/aliases"
 
-if [ "$(tty)" = "/dev/tty1" ]; 
+if [ "$(tty)" = "/dev/tty1" ];
 then
-  pgrep i3 || exec startx "$XDG_CONFIG_HOME/X11/.xinitrc" 
+  pgrep i3 || exec startx "$XDG_CONFIG_HOME/X11/.xinitrc"
 fi
 
 bindkey -v
