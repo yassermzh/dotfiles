@@ -11,3 +11,9 @@ URxvt.perl-ext-common: default,clipboard
 URxvt.keysym.Control-Shift-C: eval:selection_to_clipboard
 URxvt.keysym.Control-Shift-V: eval:paste_clipboard
 
+
+! apply without restart
+! xrdb -merge ~/.config/X11/.Xresources
+!
+! see current settings
+! xrdb -query
