@@ -21,8 +21,8 @@ return {
             auto_quoting = true, -- enable/disable auto-quoting
             mappings = {         -- extend mappings
               i = {
-                ["<C-k>"] = lga_actions.quote_prompt({ postfix = "-F -w" }),
-                ["<C-h>"] = lga_actions.quote_prompt({ postfix = "-F -w --iglob \"src/**/*\"" }),
+                ["<C-k>"] = lga_actions.quote_prompt({ postfix = " -F -w" }),
+                ["<C-h>"] = lga_actions.quote_prompt({ postfix = " -F -w --iglob \"src/**/*\"" }),
               },
             },
           },
