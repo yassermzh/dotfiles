@@ -28,4 +28,4 @@ function light() {
   touch ~/.config/alacritty/alacritty.toml
 }
 
-alias plist="lsof -i -l -n | grep LISTEN"
+alias plist="lsof -i -l -nP | grep LISTEN"
