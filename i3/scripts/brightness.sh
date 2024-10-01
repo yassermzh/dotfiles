@@ -11,16 +11,16 @@ function get_brightness {
 function send_notification {
     brightness=`get_brightness`
     # Send the notification
-    dunstify -i audio-volume-muted-blocking -t 800 -r 2593 -u normal "brightness: $brightness%"
+    dunstify -t 800 -r 2593 -u normal "brightness: $brightness%"
 }
 
 case $1 in
     up)
-    brightnessctl set +10% > /dev/null
+    brightnessctl set +5% > /dev/null
     send_notification
     ;;
     down)
-    brightnessctl set 10%- > /dev/null
+    brightnessctl set 5%- > /dev/null
     send_notification
     ;;
 esac
