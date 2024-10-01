@@ -28,7 +28,7 @@ return {
     end
   },
   "mbbill/undotree",
-  { "theprimeagen/refactoring.nvim", opts = {} },
+  -- { "theprimeagen/refactoring.nvim", opts = {} },
 
   {
     "folke/which-key.nvim",
@@ -46,11 +46,11 @@ return {
   "ntpeters/vim-better-whitespace",
 
 
-  "lifepillar/vim-solarized8",
+  -- "lifepillar/vim-solarized8",
 
   -- "easymotion/vim-easymotion",
 
-  "ThePrimeagen/vim-be-good",
+  -- "ThePrimeagen/vim-be-good",
 
   "tpope/vim-surround",
 
