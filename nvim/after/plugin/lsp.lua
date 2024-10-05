@@ -75,8 +75,8 @@ lspconfig.phpactor.setup {
     -- ["language_server_phpstan.enabled"] = false,
     -- ["language_server_psalm.enabled"] = false,
     ["language_server_php_cs_fixer.enabled"] = true, -- Enable PHP CS Fixer
-    ["language_server_php_cs_fixer.bin"] = "/Users/yasser/works/spreadgroup/backend/vendor/friendsofphp/php-cs-fixer/php-cs-fixer",
+    ["language_server_php_cs_fixer.bin"] = "/home/yas/works/spreadgroup/backend/vendor/friendsofphp/php-cs-fixer/php-cs-fixer",
     -- ["php_code_sniffer.enabled"] = true,
-    -- ["php_code_sniffer.bin"] = "/Users/yasser/works/spreadgroup/backend/vendor/squizlabs/php_codesniffer/bin/phpcs"
+    -- ["php_code_sniffer.bin"] = "/home/yas/works/spreadgroup/backend/vendor/squizlabs/php_codesniffer/bin/phpcs"
   }
 }
