@@ -99,8 +99,8 @@
 (deflayer lNv
   @lDf _    _    _    _    _    _    _    _    _    _     _    _
   _    _    _    _    _    _    _    _    _    _    _     _    _    _
-  _    _    _    _    _    _    pgup home @bsp end  _     _    _    _
-  @lUp _    lalt lmet lsft _    pgdn left down up  right  _    _
+  _    _    _    _    _    _    _    home pgdn pgup end   _    _    _
+  @lUp _    lalt lmet lsft _    @bsp left down up   right _    _
   _    _    _    _    lctl _    _    @ent _    _    _     _
   _    _    _              _              _    _     _    _    _
 )
