@@ -16,7 +16,7 @@ alias set-dns="resolvectl dns wlp0s20f3 8.8.8.8"
 
 alias k="sudo kmonad ~/.config/kmonad/linux.kbd"
 alias p="sudo openvpn --config clientHQ_linux.ovpn"
-alias n="nvim"
+alias v="nvim"
 
 function dark() {
   ln -fs ~/.config/alacritty/themes/themes/rose-pine-moon.toml ~/.config/alacritty/themes/themes/_active.toml
