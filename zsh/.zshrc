@@ -19,13 +19,14 @@ setopt PUSHD_IGNORE_DUPS
 setopt PUSHD_SILENT
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/dotfiles/zsh/external/bd.zsh
+source "$XDG_CONFIG_HOME/zsh/external/bd.zsh"
 
 if [ $(command -v "fzf") ]; then
    source /usr/share/fzf/completion.zsh
    source /usr/share/fzf/key-bindings.zsh
 fi
 
+source "$XDG_CONFIG_HOME/zsh/external/zsh-autosuggestions.zsh"
 
 source "$XDG_CONFIG_HOME/zsh/aliases"
 
@@ -40,3 +41,4 @@ export KEYTIMEOUT=1
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.symfony5/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="/opt/insomnia:$PATH"
