@@ -35,10 +35,19 @@ then
   pgrep i3 || exec startx "$XDG_CONFIG_HOME/X11/.xinitrc"
 fi
 
+
+# colemak vi
 bindkey -v
+bindkey -a 't' vi-insert
+bindkey -a 'T' vi-insert-bol
+bindkey -a 'u' vi-undo-change
+bindkey -a 'J' vi-join
+
 export KEYTIMEOUT=1
 
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.symfony5/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/opt/insomnia:$PATH"
+
+
