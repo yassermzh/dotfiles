@@ -5,7 +5,7 @@ map <delete> delete
 
 
 cmd open ${{
-  google-chrome-stable "$f"
+  firefox "$f"
 }}
 
 
