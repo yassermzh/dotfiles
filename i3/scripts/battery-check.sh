@@ -4,7 +4,7 @@
 THRESHOLD=25
 
 # Get battery level using acpi (assuming battery is BAT0, adjust if needed)
-BATTERY_LEVEL=$(acpi -b | grep -P -o '[0-9]+(?=%)')
+BATTERY_LEVEL=$(acpi -b | grep -v 'Unknown' | grep -P -o '[0-9]+(?=%)')
 
 # Get charging status (Charging or Discharging)
 CHARGING_STATUS=$(acpi -b | grep -o 'Charging\|Discharging')
