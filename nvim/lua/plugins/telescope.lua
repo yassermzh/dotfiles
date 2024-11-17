@@ -13,6 +13,7 @@ return {
 
       local telescope = require("telescope")
       local lga_actions = require("telescope-live-grep-args.actions")
+      local action_state = require("telescope.actions.state")
       local live_grep_args_shortcuts = require("telescope-live-grep-args.shortcuts")
 
       telescope.setup({
@@ -49,6 +50,11 @@ return {
               ["<C-e>"] = "move_selection_next",
               ["<C-i>"] = "move_selection_previous",
               ["<C-x>"] = require("telescope.actions").delete_buffer,
+              ["<C-v>"] = function(prompt_bufnr)
+                local current_picker = action_state.get_current_picker(prompt_bufnr)
+                local text = vim.fn.getreg('+'):gsub("\n", "\\n") -- Adjust based on clipboard option
+                current_picker:set_prompt(text, false)
+              end,
             },
             n = {
               ["<C-x>"] = require("telescope.actions").delete_buffer,
@@ -83,7 +89,6 @@ return {
         { desc = "grep word under cursor" })
       vim.keymap.set("n", "<leader>pS", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
         { desc = "live grep" })
-
     end
   }
 }
