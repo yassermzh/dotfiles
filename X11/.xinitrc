@@ -1,4 +1,4 @@
-#xrandr --setprovideroutputsource modesetting NVIDIA-G0
+# xrandr --setprovideroutputsource modesetting NVIDIA-G0
 #xrandr --auto
 
 
@@ -13,7 +13,7 @@ udiskie &
 # keyboard layout and mappings
 #
 # xmodmap ~/.config/X11/.Xmodmap
-setxkbmap -layout us,ir,de -option grp:alt_shift_toggle 
+setxkbmap -layout us,ir -option grp:alt_shift_toggle
 setxkbmap -option 'caps:ctrl_modifier'
 xcape -e 'Caps_Lock=Escape'
 xmodmap -e "keysym Menu = Super_R"
@@ -27,6 +27,6 @@ xset r rate 350 50 # keyboard repeat start-delay rate
 #exec --no-startup-id "libinput-gestures-setup start"
 
 #exec i3 &>> "/var/log/i3.log"
-exec i3 
+exec i3
 
 

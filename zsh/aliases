@@ -3,9 +3,10 @@ for index ({1..9}) alias "$index"="cd +${index}"; unset index
 
 alias lf=lf-ueberzug
 alias open=xdg-open
-#alias vpn="sshuttle -v --dns -r root@vps 0/0"
-alias vpn="sshuttle -v -x 78.46.192.51 -r root@78.46.192.51 0/0" 
-alias proxy="ssh -D8080 -fCqN root@vps"
+
+#alias vpn="sshuttle -v --dns -r root@falkenstein 0/0"
+alias proxy-whole-network="sshuttle -v --dns -x 128.140.122.35 -r yas@panel.alacolang.ir 0/0" 
+alias proxy-socks="ssh -D8080 -fCqN yas@panel.alacolang.ir"
 alias hotspot="sudo create_ap wlp0s20f3 enp7s0 myhot 24681357"
 alias tamam="systemctl suspend"
 alias lock="i3lock"
@@ -15,7 +16,6 @@ alias set-dns="resolvectl dns wlp0s20f3 8.8.8.8"
 # show dns info: resolvectl dns"
 
 alias k="sudo kmonad ~/.config/kmonad/linux.kbd"
-alias p="sudo openvpn --config clientHQ_linux.ovpn"
 alias v="nvim"
 
 function dark() {
@@ -29,3 +29,6 @@ function light() {
 }
 
 alias plist="lsof -i -l -nP | grep LISTEN"
+
+
+

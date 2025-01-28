@@ -46,3 +46,11 @@ cp "$DOTFILES/libinput-gestures.conf" "$XDG_CONFIG_HOME"
 
 # lf
 ln -sf "$DOTFILES/lf" "$XDG_CONFIG_HOME"
+
+# default apps
+cp "$DOTFILES/mimeapps.list" "$XDG_CONFIG_HOME"
+
+######### # Fonts # #########
+mkdir -p "$XDG_DATA_HOME"
+cp -rf "$DOTFILES/fonts" "$XDG_DATA_HOME"
+

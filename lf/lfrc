@@ -3,15 +3,15 @@ set hidden false
 
 map <delete> delete
 
-
 cmd open ${{
-  firefox "$f"
+    firefox "$f" & disown
 }}
 
-
 map <enter> open
-#map ae open
 map gD cd ~/Downloads
 map gw cd ~/works
 
 map DD delete
+
+echo "Loading ~/.config/lf/lfrc"
+

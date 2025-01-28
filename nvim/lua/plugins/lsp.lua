@@ -22,49 +22,64 @@ M.config = function()
     ensure_installed = { 'ts_ls', 'lua_ls', 'phpactor' }
   })
 
-  local lspconfig = require("lspconfig")
+  vim.diagnostic.config({
+    virtual_text = false,
+    update_in_insert = true,
+    severity_sort = true,
+    float = {
+      focusable = true,
+      style = "minimal",
+      border = "rounded",
+      source = "always",
+      header = "",
+      prefix = "",
+    },
+  })
 
-  local capabilities = vim.lsp.protocol.make_client_capabilities()
-  capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
-
-  local defaultHandler = function(server_name) -- default handler
-    lspconfig[server_name].setup({
-      capabilities = capabilities
-    })
-
-    vim.diagnostic.config({
-      virtual_text = false,
-      update_in_insert = true,
-      severity_sort = true,
-      float = {
-        focusable = true,
-        style = "minimal",
-        border = "rounded",
-        source = "always",
-        header = "",
-        prefix = "",
-      },
-    })
-  end
-
-  local handlers = {
-    defaultHandler,
-
-    ["lua_ls"] = function()
-      lspconfig.lua_ls.setup({
-        capabilities = capabilities,
-        settings = {
-          Lua = {
-            diagnostics = {
-              globals = { "vim" }
-            }
-          }
-        }
-      })
-    end,
-  }
-
-  require('mason-lspconfig').setup_handlers(handlers)
+  -- local lspconfig = require("lspconfig")
+  --
+  -- local capabilities = vim.lsp.protocol.make_client_capabilities()
+  -- capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+  --
+  -- local defaultHandler = function(server_name) -- default handler
+  --   print('server name is ', server_name);
+  --   lspconfig[server_name].setup({
+  --     capabilities = capabilities
+  --   })
+  --
+  --   -- vim.diagnostic.config({
+  --   --   virtual_text = false,
+  --   --   update_in_insert = true,
+  --   --   severity_sort = true,
+  --   --   float = {
+  --   --     focusable = true,
+  --   --     style = "minimal",
+  --   --     border = "rounded",
+  --   --     source = "always",
+  --   --     header = "",
+  --   --     prefix = "",
+  --   --   },
+  --   -- })
+  -- end
+  --
+  -- local handlers = {
+  --   defaultHandler,
+  --
+  --   ["lua_ls"] = function()
+  --     lspconfig.lua_ls.setup({
+  --       capabilities = capabilities,
+  --       settings = {
+  --         Lua = {
+  --           diagnostics = {
+  --             globals = { "vim" }
+  --           }
+  --         }
+  --       }
+  --     })
+  --   end,
+  -- }
+  --
+  -- require('mason-lspconfig').setup_handlers(handlers)
 
   local cmp = require('cmp')
   local cmp_select = { behavior = cmp.SelectBehavior.Select }

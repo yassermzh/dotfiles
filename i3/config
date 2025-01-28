@@ -6,7 +6,8 @@ set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 11
+font pango:Fira Mono 8
+# font pango:DejaVu Sans Mono 8
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -84,7 +85,6 @@ bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
-
 # focus the parent container
 bindsym $mod+a focus parent
 
@@ -96,11 +96,11 @@ bindsym $mod+a focus parent
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
-set $ws4 "4: tmux"
-set $ws5 "5: web"
+set $ws4 "4: work"
+set $ws5 "5: ff"
 set $ws6 "6: teams"
 set $ws7 "7"
-set $ws8 "8"
+set $ws8 "8: chrome"
 set $ws9 "9: misc"
 set $ws10 "10"
 
@@ -115,6 +115,10 @@ bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
+
+# workspace 1 output eDP-1
+# workspace 2 output HDMI-1
+# workspace 3 output HDMI-1
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -215,15 +219,17 @@ set_from_resource $white2 color15 #ffffff
 # hide borders
 hide_edge_borders both
 
-# class border backgr. text indicator child_border 
+# class border backgr. text indicator child_border
 client.focused 		#333333 $black2 $white2 #285577
 client.focused_inactive #333333 $background $foreground #484e50
 client.unfocused 	#333333 #222222 #888888 #292d2e #222222
 client.urgent 		$red1 $red1 $white2 $red1 $red1
-client.placeholder 	#000000 #0c0c0c $white2 #000000 0c0c0c
+client.placeholder 	#000000 #0c0c0c $white2 #000000 #0c0c0c
 
 for_window [class="URxvt*"] border pixel 1
 for_window [class="Alacritty"] border pixel 1
+for_window [class="firefox"] border pixel 1
+for_window [class="Google*"] border pixel 1
 
 # Set inner and outer gaps
 gaps inner 4px
