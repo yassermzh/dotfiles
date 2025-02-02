@@ -19,12 +19,12 @@ alias k="sudo kmonad ~/.config/kmonad/linux.kbd"
 alias v="nvim"
 
 function dark() {
-  ln -fs ~/.config/alacritty/themes/themes/rose-pine-moon.toml ~/.config/alacritty/themes/themes/_active.toml
+  ln -fs ~/.config/alacritty/themes/themes/rose_pine_moon.toml ~/.config/alacritty/themes/themes/_active.toml
   touch ~/.config/alacritty/alacritty.toml
 }
 
 function light() {
-  ln -fs ~/.config/alacritty/themes/themes/rose-pine-dawn.toml ~/.config/alacritty/themes/themes/_active.toml
+  ln -fs ~/.config/alacritty/themes/themes/rose_pine_dawn.toml ~/.config/alacritty/themes/themes/_active.toml
   touch ~/.config/alacritty/alacritty.toml
 }
 
