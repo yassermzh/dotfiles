@@ -40,10 +40,10 @@ vim.keymap.set("n", "<leader>w", ':w<CR>', { desc = "Save file" })
 
 vim.keymap.set("n", "<leader>z", "<cmd>only<CR>", { desc = "Close other buffers" })
 
-vim.keymap.set({ 'n', 'v' }, 'n', 'h', { noremap = true }) -- left
-vim.keymap.set({ 'n', 'v' }, 'e', 'j', { noremap = true }) -- down
-vim.keymap.set({ 'n', 'v' }, 'i', 'k', { noremap = true }) -- up
-vim.keymap.set({ 'n', 'v' }, 'o', 'l', { noremap = true }) -- right
+-- vim.keymap.set({ 'n', 'v' }, 'n', 'h', { noremap = true }) -- left
+-- vim.keymap.set({ 'n', 'v' }, 'e', 'j', { noremap = true }) -- down
+-- vim.keymap.set({ 'n', 'v' }, 'i', 'k', { noremap = true }) -- up
+-- vim.keymap.set({ 'n', 'v' }, 'o', 'l', { noremap = true }) -- right
 vim.keymap.set('n', '<C-w>N', '<C-w>H', { noremap = true, silent = true, desc = "Move window to left" })
 vim.keymap.set('n', '<C-w>E', '<C-w>J', { noremap = true, silent = true, desc = "Move window to down" })
 vim.keymap.set('n', '<C-w>I', '<C-w>K', { noremap = true, silent = true, desc = "Move window to up" })
@@ -52,17 +52,17 @@ vim.keymap.set('n', '<C-w>n', '<C-w>h', { noremap = true, silent = true, desc = 
 vim.keymap.set('n', '<C-w>e', '<C-w>j', { noremap = true, silent = true, desc = "Go to down window" })
 vim.keymap.set('n', '<C-w>i', '<C-w>k', { noremap = true, silent = true, desc = "Go to up window" })
 vim.keymap.set('n', '<C-w>o', '<C-w>l', { noremap = true, silent = true, desc = "Go to right window" })
-vim.keymap.set('n', 't', 'i', { noremap = true })          -- insert mode
-vim.keymap.set('n', 'T', 'I', { noremap = true })          -- insert mode
-vim.keymap.set('n', 'l', 'o', { noremap = true })          -- newline below
-vim.keymap.set('n', 'L', 'O', { noremap = true })          -- newline above
+-- vim.keymap.set('n', 't', 'i', { noremap = true })          -- insert mode
+-- vim.keymap.set('n', 'T', 'I', { noremap = true })          -- insert mode
+-- vim.keymap.set('n', 'l', 'o', { noremap = true })          -- newline below
+-- vim.keymap.set('n', 'L', 'O', { noremap = true })          -- newline above
 vim.keymap.set({ 'n', 'v' }, 'h', ':', { noremap = true }) -- command mode
 vim.keymap.set('n', '<C-g>', '<C-o>', { noremap = true })  -- go back
 vim.keymap.set('n', '<C-z>', '<C-i>', { noremap = true })  -- go forward
-vim.keymap.set({ 'n', 'v' }, 'W', 'e', { noremap = true }) -- end of word
+-- vim.keymap.set({ 'n', 'v' }, 'W', 'e', { noremap = true }) -- end of word
 -- vim.keymap.set('i', <C-x>', '<Esc>lxi', { noremap = true })
-vim.keymap.set('v', '/', 'o', { noremap = true })          -- go to first selection line
-vim.keymap.set('v', '.', 'i', { noremap = true })          -- inside
+-- vim.keymap.set('v', '/', 'o', { noremap = true })          -- go to first selection line
+-- vim.keymap.set('v', '.', 'i', { noremap = true })          -- inside
 
 vim.keymap.set("n", "<C-e>", "<cmd>cnext<CR>zz", { noremap = true, desc = "Next diagnostic" })
 vim.keymap.set("n", "<C-i>", "<cmd>cprev<CR>zz", { noremap = true, desc = "Previous diagnostic" })
