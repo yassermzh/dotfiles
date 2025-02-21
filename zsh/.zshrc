@@ -51,3 +51,11 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/opt/insomnia:$PATH"
 
 
+
+# pnpm
+export PNPM_HOME="/home/yas/.config/local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

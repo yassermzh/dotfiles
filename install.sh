@@ -3,23 +3,22 @@
 # nvim #
 ########
 rm -rf "$HOME/.config/nvim"
-ln -sf "$HOME/dotfiles/nvim" "$HOME/.config/nvim"
+ln -s "$HOME/dotfiles/nvim" "$HOME/.config"
 
 rm -rf "$HOME/.config/alacritty"
-ln -sf "$HOME/dotfiles/alacritty" "$HOME/.config/alacritty"
+ln -s "$HOME/dotfiles/alacritty" "$HOME/.config"
 
 rm -rf "$HOME/.config/kmonad"
-ln -sf "$HOME/dotfiles/kmonad" "$HOME/.config/kmonad"
+ln -s "$HOME/dotfiles/kmonad" "$HOME/.config"
 
 rm -rf "$HOME/.config/X11"
 ln -s "$HOME/dotfiles/X11" "$HOME/.config"
 
 mkdir -p "$HOME/.config/zsh"
 ln -sf "$HOME/dotfiles/zsh/.zshenv" "$HOME"
-ln -sf "$HOME/dotfiles/zsh/.zshrc" "$HOME/.config/zsh"
+ln -sf "$HOME/dotfiles/zsh/.zshrc" "$HOME/.config/zsh/.zshrc"
 ln -sf "$HOME/dotfiles/zsh/aliases" "$HOME/.config/zsh/aliases"
-rm -rf "$HOME/.config/zsh/external"
-ln -sf "$HOME/dotfiles/zsh/external" "$HOME/.config/zsh"
+ln -sf "$HOME/dotfiles/zsh/external" "$HOME/.config/zsh/external"
 
 ########
 # tmux #
