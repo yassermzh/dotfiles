@@ -37,26 +37,27 @@
 
 (defalias
   ;; layer jumping
-  lNv (tap-hold 215 spc (layer-toggle lNv))
-  lNm (tap-hold 215 a (layer-toggle lNm))
+  lNv (tap-hold 250 spc (layer-toggle lNv))
+  lNm (tap-hold 250 a (layer-toggle lNm))
 
 
 
   lS (tap-hold-next-release 215 o (layer-toggle lS))
 
   ;; home-row modifiers
-  a_r (tap-hold-next-release 215 r lalt)
-  m_h (tap-hold-next-release 215 h lmet)
+  a_r (tap-hold-next-release 200 r lalt)
+  a_i (tap-hold-next-release 200 i lalt)
 
-  c_s (tap-hold-next-release 215 s lctl)
-  a_i (tap-hold-next-release 215 i lalt)
+  c_s (tap-hold-next-release 200 s lctl)
+  c_e (tap-hold-next-release 200 e lctl)
 
-  s_n (tap-hold-next-release 215 n lsft)
-  c_e (tap-hold-next-release 215 e lctl)
+  s_n (tap-hold-next-release 250 n lsft)
+  s_t (tap-hold-next-release 250 t lsft)
 
-  m_v (tap-hold-next-release 215 v lmet)
-
-  s_t (tap-hold-next-release 215 t lsft)
+  m_v (tap-hold-next-release 200 v lmet)
+  m_h (tap-hold-next-release 200 h lmet)
+  m_g (tap-hold-next-release 200 g lmet)
+  m_m (tap-hold-next-release 200 m lmet)
 
   ;; space cadet
   lcd (tap-hold-next 215 \( lsft)
@@ -91,7 +92,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    q    w    f    p    b    j    l    u    y    ;    _    _    _
-  @cpl @lNm @a_r @c_s @s_t g    m    @s_n @c_e @a_i @lS  _    _
+  @cpl @lNm @a_r @c_s @s_t @m_g @m_m    @s_n @c_e @a_i @lS  _    _
   @lcd x    c    d    @m_v z    k    @m_h _    _    _    @rcd
   _    _    @bsp           @lNv           @ent _    _    _    _
 )
