@@ -15,7 +15,11 @@ alias services-running="systemctl --type service --state running"
 alias set-dns="resolvectl dns wlp0s20f3 8.8.8.8"
 # show dns info: resolvectl dns"
 
-alias k="sudo kmonad ~/.config/kmonad/linux.kbd"
+function k() {
+  sudo kmonad ~/.config/kmonad/linux.kbd &
+  sleep 5
+  setxkbmap -layout us,ir -option grp:alt_shift_toggle
+}
 alias v="nvim"
 
 function dark() {
