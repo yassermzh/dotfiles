@@ -277,6 +277,8 @@ for_window [window_role="task_dialog"] floating enable
 exec --no-startup-id "libinput-gestures-setup start"
 exec --no-startup-id clipmenud
 
+exec --no-startup-id ~/.config/i3/scripts/touchpad.sh
+
 bindsym $mod+v exec clipmenu
 
 ## Include
