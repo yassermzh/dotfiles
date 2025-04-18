@@ -281,6 +281,13 @@ exec --no-startup-id ~/.config/i3/scripts/touchpad.sh
 
 bindsym $mod+v exec clipmenu
 
+# bindsym F10 exec ~/works/nerd-dictation/nerd-dictation begin
+# bindsym F11 exec ~/works/nerd-dictation/nerd-dictation end
+
+# Voice input: F10 to start recording, F11 to stop and transcribe
+bindsym F10 exec --no-startup-id ~/.config/i3/scripts/whisper.sh start
+bindsym F11 exec --no-startup-id ~/.config/i3/scripts/whisper.sh stop
+
 ## Include
 include $XDG_CONFIG_HOME/i3/include/*.conf
 

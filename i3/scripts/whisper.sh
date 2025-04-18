@@ -92,20 +92,20 @@ if [ "$1" == "stop" ]; then
     trap 'rm -rf "$OUTPUT_DIR"' EXIT # Ensure whisperx output dir is cleaned up
 
     # Transcribe
-    TRANSCRIPT=$(uvx whisperx \
+    TRANSCRIPT=$(~/.venv/bin/whisperx \
                     --model "$MODEL" \
                     --compute_type "$COMPUTE_TYPE" \
                     --output_format txt \
                     --output_dir "$OUTPUT_DIR" \
-                    "$AUDIO_FILE" 2>/dev/null | tail -n 1)
+                    "$AUDIO_FILE" 2>/dev/null)
 
     # Fallback: If stdout was empty, try reading the .txt file
-    if [ -z "$TRANSCRIPT" ]; then
+    # if [ -z "$TRANSCRIPT" ]; then
         TXT_FILE=$(find "$OUTPUT_DIR" -maxdepth 1 -name '*.txt' -print -quit)
         if [ -f "$TXT_FILE" ]; then
             TRANSCRIPT=$(cat "$TXT_FILE")
         fi
-    fi
+    # fi
 
     # Trim whitespace
     TRANSCRIPT=$(echo "$TRANSCRIPT" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
