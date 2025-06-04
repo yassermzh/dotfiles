@@ -1,3 +1,4 @@
+set ratios 1:2:3
 set icons true
 set hidden false
 
@@ -14,4 +15,10 @@ map gw cd ~/works
 map DD delete
 
 echo "Loading ~/.config/lf/lfrc"
+
+set previewer ~/.config/lf/preview
+set cleaner ~/.config/lf/cleaner
+set preview true
+
+map y !printf %s "$f" | xclip -selection clipboard
 

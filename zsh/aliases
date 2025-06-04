@@ -1,7 +1,7 @@
 alias d='dirs -v'
 for index ({1..9}) alias "$index"="cd +${index}"; unset index
 
-alias lf=lf-ueberzug
+alias lf=lfrun
 alias open=xdg-open
 
 #alias vpn="sshuttle -v --dns -r root@falkenstein 0/0"
