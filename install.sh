@@ -20,6 +20,9 @@ ln -sf "$HOME/dotfiles/zsh/.zshrc" "$HOME/.config/zsh/.zshrc"
 ln -sf "$HOME/dotfiles/zsh/aliases" "$HOME/.config/zsh/aliases"
 ln -sf "$HOME/dotfiles/zsh/external" "$HOME/.config/zsh/external"
 
+rm -rf "$HOME/.config/fusuma"
+ln -s "$HOME/dotfiles/fusuma" "$HOME/.config"
+
 ########
 # tmux #
 ########
