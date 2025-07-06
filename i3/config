@@ -229,6 +229,7 @@ client.placeholder 	#000000 #0c0c0c $white2 #000000 #0c0c0c
 for_window [class="URxvt*"] border pixel 1
 for_window [class="Alacritty"] border pixel 1
 for_window [class="firefox"] border pixel 1
+for_window [class="zen*"] border pixel 1
 for_window [class="Google*"] border pixel 1
 
 for_window [title="Open File"] floating enable, resize set 800 600, move position center
