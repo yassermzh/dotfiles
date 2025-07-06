@@ -22,3 +22,5 @@ set preview true
 
 map y !printf %s "$f" | xclip -selection clipboard
 
+set sortby time
+set reverse true
