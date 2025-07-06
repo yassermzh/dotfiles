@@ -1,0 +1,12 @@
+#https://ghostty.zerebos.com/app/import-export
+
+theme = catppuccin-frappe
+
+# You can preview the config here
+
+clipboard-read = allow
+clipboard-write = allow
+copy-on-select = true
+window-padding-x = 0
+window-padding-y = 0
+
