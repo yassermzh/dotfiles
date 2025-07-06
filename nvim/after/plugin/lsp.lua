@@ -114,3 +114,7 @@ lspconfig.phpactor.setup {
     -- ["php_code_sniffer.bin"] = "/home/yas/works/spreadgroup/backend/vendor/squizlabs/php_codesniffer/bin/phpcs"
   }
 }
+
+lspconfig.gopls.setup({
+  capabilities = capabilities,
+})

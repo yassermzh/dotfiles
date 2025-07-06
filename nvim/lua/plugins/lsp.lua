@@ -19,7 +19,7 @@ M.config = function()
   require("fidget").setup({})
   require('mason').setup({})
   require('mason-lspconfig').setup({
-    ensure_installed = { 'ts_ls', 'lua_ls', 'phpactor' }
+    ensure_installed = { 'ts_ls', 'lua_ls', 'phpactor', 'gopls' }
   })
 
   vim.diagnostic.config({
