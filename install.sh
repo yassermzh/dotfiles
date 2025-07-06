@@ -5,6 +5,15 @@
 rm -rf "$HOME/.config/nvim"
 ln -s "$HOME/dotfiles/nvim" "$HOME/.config"
 
+rm -rf "$HOME/.config/ghostty"
+ln -s "$HOME/dotfiles/ghostty" "$HOME/.config"
+
+rm -rf "$HOME/.config/hypr"
+ln -s "$HOME/dotfiles/hypr" "$HOME/.config"
+
+rm -rf "$HOME/.config/waybar"
+ln -s "$HOME/dotfiles/waybar" "$HOME/.config"
+
 rm -rf "$HOME/.config/alacritty"
 ln -s "$HOME/dotfiles/alacritty" "$HOME/.config"
 
@@ -44,7 +53,7 @@ ln -sf "$DOTFILES/dunst/dunstrc" "$XDG_CONFIG_HOME/dunst/dunstrc"
 
 
 # gestures
-cp "$DOTFILES/libinput-gestures.conf" "$XDG_CONFIG_HOME"
+# cp "$DOTFILES/libinput-gestures.conf" "$XDG_CONFIG_HOME"
 
 # lf
 ln -sf "$DOTFILES/lf" "$XDG_CONFIG_HOME"
