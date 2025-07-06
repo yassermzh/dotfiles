@@ -45,19 +45,19 @@
   lS (tap-hold-next-release 215 o (layer-toggle lS))
 
   ;; home-row modifiers
-  a_r (tap-hold-next-release 200 r lalt)
-  a_i (tap-hold-next-release 200 i lalt)
+  a_r (tap-hold-next-release 233 r lalt)
+  a_i (tap-hold-next-release 233 i lalt)
 
-  c_s (tap-hold-next-release 200 s lctl)
-  c_e (tap-hold-next-release 200 e lctl)
+  c_s (tap-hold-next-release 233 s lctl)
+  c_e (tap-hold-next-release 233 e lctl)
 
   s_n (tap-hold-next-release 250 n lsft)
   s_t (tap-hold-next-release 250 t lsft)
 
-  m_v (tap-hold-next-release 200 v lmet)
-  m_h (tap-hold-next-release 200 h lmet)
-  m_g (tap-hold-next-release 200 g lmet)
-  m_m (tap-hold-next-release 200 m lmet)
+  m_v (tap-hold-next-release 233 v lmet)
+  m_h (tap-hold-next-release 233 h lmet)
+  m_g (tap-hold-next-release 233 g lmet)
+  m_m (tap-hold-next-release 233 m lmet)
 
   ;; space cadet
   lcd (tap-hold-next 215 \( lsft)
