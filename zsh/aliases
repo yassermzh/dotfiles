@@ -35,5 +35,7 @@ function light() {
 alias plist="lsof -i -l -nP | grep LISTEN"
 
 
-alias pbcopy='xsel --clipboard --input'
-alias pbpaste='xsel --clipboard --output'
+#alias pbcopy='xsel --clipboard --input'
+#alias pbpaste='xsel --clipboard --output'
+pbcopy='wl-copy'
+pbpaste='wl-paste'
