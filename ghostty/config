@@ -1,6 +1,7 @@
 #https://ghostty.zerebos.com/app/import-export
 
-theme = catppuccin-frappe
+# theme = dark:catppuccin-frappe,light:Builtin Solarized Light
+theme = dark:catppuccin-frappe,light:catppuccin-latte
 
 # You can preview the config here
 
@@ -10,3 +11,5 @@ copy-on-select = true
 window-padding-x = 0
 window-padding-y = 0
 
+cursor-color = #32CD32
+adjust-cursor-thickness = 6
