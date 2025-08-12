@@ -18,7 +18,7 @@ vim.keymap.set("n", "<C-m>", "m", { noremap = true, desc = "Mark" })
 -- next greatest remap ever : asbjornHaland
 -- vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 -- vim.keymap.set("n", "<leader>Y", [["+Y]])
-vim.keymap.set({ "n", "v" }, "<leader>dd", [["_d]], { desc = "Delete" })
+vim.keymap.set({ "n", "v" }, "<leader>d", '"_d', { desc = "Delete" })
 
 -- This is going to get me cancelled
 vim.keymap.set("i", "<C-c>", "<Esc>")
@@ -108,3 +108,8 @@ vim.keymap.set("n", "<leader>ll", ':LspRestart<CR>', { noremap = true, silent = 
 
 -- vim.keymap.set('c', '<C-i>', '<Up>', { noremap = true, silent = true })
 -- vim.keymap.set('c', '<C-e>', '<Down>', { noremap = true, silent = true })
+--
+-- Map Ctrl+S to save in normal and insert mode
+vim.keymap.set('n', '<C-s>', ':w<CR>', { noremap = true, silent = true })
+vim.keymap.set('i', '<C-s>', '<Esc>:w<CR>a', { noremap = true, silent = true })
+

@@ -77,8 +77,8 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+# bindsym $mod+w layout tabbed
+# bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -96,12 +96,12 @@ bindsym $mod+a focus parent
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
-set $ws4 "4: work"
-set $ws5 "5: ff"
-set $ws6 "6: teams"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
 set $ws7 "7"
-set $ws8 "8: chrome"
-set $ws9 "9: misc"
+set $ws8 "8"
+set $ws9 "9"
 set $ws10 "10"
 
 # switch to workspace
@@ -228,6 +228,7 @@ client.placeholder 	#000000 #0c0c0c $white2 #000000 #0c0c0c
 
 for_window [class="URxvt*"] border pixel 1
 for_window [class="Alacritty"] border pixel 1
+for_window [class="com.mitchellh.ghostty"] border none
 for_window [class="firefox"] border pixel 1
 for_window [class="zen*"] border pixel 1
 for_window [class="Google*"] border pixel 1

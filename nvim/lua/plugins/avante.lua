@@ -13,13 +13,28 @@ return {
     end,
     event = "VeryLazy",
     version = false, -- Never set this value to "*"! Never!
+    api_key = "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",
     ---@module 'avante'
     ---@type avante.Config
     opts = {
-      -- add any opts here
-      -- for example
-      provider = "claude",
+      provider = "openrouter",
+      -- provider = "claude",
       providers = {
+        openrouter = {
+          __inherited_from = 'openai',
+          endpoint = 'https://openrouter.ai/api/v1',
+          api_key_name = 'yas-avante',
+          api_key = "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",
+          -- api_key_name = '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',
+          -- model = 'mistralai/mistral-nemo:free',
+          -- model = 'deepseek/deepseek-r1',
+          model = 'openai/gpt-4o-mini',
+          timeout = 30000, -- Timeout in milliseconds
+          extra_request_body = {
+            temperature = 0.75,
+            max_tokens = 1024,
+          },
+        },
         claude = {
           endpoint = "https://api.anthropic.com",
           model = "claude-sonnet-4-20250514",

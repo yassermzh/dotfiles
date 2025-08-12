@@ -5,7 +5,7 @@ set hidden false
 map <delete> delete
 
 cmd open ${{
-    firefox "$f" & disown
+    google-chrome-stable "$f" & disown
 }}
 
 map <enter> open

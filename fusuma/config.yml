@@ -1,29 +1,19 @@
 swipe:
   3:
-    begin:
-      command: xdotool mousedown 1
-    update:
-      command: xdotool mousemove_relative -- $move_x, $move_y
-      interval: 0.01
-      accel: 0.5
-    end:
-      command: xdotool mouseup 1
-
-  4:
-    left:
-      command: exec i3 workspace next
-    right:
-      command: exec i3 workspace prev
     up:
-      command: exec i3 fullscreen toggle
+      command: "wtype 'Three finger swipe up'"
     down:
-      command: exec i3 floating toggle
+      command: "wtype 'Three finger swipe down'"
+    left:
+      command: "hyprctl dispatch workspace e-1"
+    right:
+      command: "hyprctl dispatch workspace e+1"
 
 pinch:
   in:
-    command: "xdotool key ctrl+plus"
+    command: "wtype 'Pinch in'"
   out:
-    command: "xdotool key ctrl+minus"
+    command: "wtype 'Pinch out'"
 
 threshold:
   swipe: 0.4

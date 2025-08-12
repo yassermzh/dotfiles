@@ -11,6 +11,12 @@ ln -s "$HOME/dotfiles/ghostty" "$HOME/.config"
 rm -rf "$HOME/.config/hypr"
 ln -s "$HOME/dotfiles/hypr" "$HOME/.config"
 
+rm -rf "$HOME/.config/local/share/applications"
+ln -s "$HOME/dotfiles/applications" "$HOME/.config/local/share"
+
+rm -rf $HOME/.config/xdg-desktop-portal
+ln -s $HOME/xdg-desktop-portal $HOME/.config
+
 rm -rf "$HOME/.config/waybar"
 ln -s "$HOME/dotfiles/waybar" "$HOME/.config"
 

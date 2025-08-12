@@ -59,3 +59,15 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+export PATH=~/.npm-global/bin:$PATH
+
+
+export GOPATH=$HOME/go
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+export GOBIN=$GOPATH/bin
+
+export N_PREFIX="$HOME/.n"
+export PATH="$N_PREFIX/bin:$PATH"
+
+export PATH="$HOME/.config/local/share/gem/ruby/3.4.0/bin:$PATH"
+

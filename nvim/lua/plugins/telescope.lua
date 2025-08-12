@@ -74,8 +74,18 @@ return {
       -- require("telescope.builtin").help_tags()
 
       vim.keymap.set('n', '<leader>pf', builtin.find_files, { desc = "find files" })
-      vim.keymap.set('n', '<leader>B', builtin.buffers, { desc = "list buffers" })
-      vim.keymap.set('n', '<C-p>', builtin.git_files, { desc = "git files" })
+      vim.keymap.set('n', '<C-S-p>', builtin.buffers, { desc = "list buffers" })
+
+      local function project_files()
+        local opts = {} -- define here if you want to customize
+        local ok = pcall(builtin.git_files, opts)
+        if not ok then
+          builtin.find_files(opts)
+        end
+      end
+
+      vim.keymap.set('n', '<C-p>', project_files, { desc = "git (find) files" })
+      -- vim.keymap.set('n', '<C-p>', builtin.git_files, { desc = "git files" })
       -- vim.keymap.set('n', '<C-p>', function
       --    builtin.git_files({layout_strategy = "vertical", layout_config ={ width = 0.9 } }, { desc = "git files" })
       --  end

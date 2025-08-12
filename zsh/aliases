@@ -20,7 +20,13 @@ function k() {
   sleep 5
   setxkbmap -layout us,ir -option grp:alt_shift_toggle
 }
-alias v="nvim"
+
+function reset-kb() {
+  # try this when keyboard is not working
+  sudo pkill -f kmonad
+  sudo modprobe -r atkbd && sudo modprobe atkbd
+  sudo udevadm trigger
+}
 
 function dark() {
   ln -fs ~/.config/alacritty/themes/themes/rose_pine_moon.toml ~/.config/alacritty/themes/themes/_active.toml
@@ -39,3 +45,5 @@ alias plist="lsof -i -l -nP | grep LISTEN"
 #alias pbpaste='xsel --clipboard --output'
 pbcopy='wl-copy'
 pbpaste='wl-paste'
+
+alias f=fzf

@@ -3,6 +3,7 @@
 # theme = dark:catppuccin-frappe,light:Builtin Solarized Light
 theme = dark:catppuccin-frappe,light:catppuccin-latte
 
+font-size = 13
 # You can preview the config here
 
 clipboard-read = allow
@@ -12,4 +13,4 @@ window-padding-x = 0
 window-padding-y = 0
 
 cursor-color = #32CD32
-adjust-cursor-thickness = 6
+adjust-cursor-thickness = 3
