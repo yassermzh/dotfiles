@@ -45,8 +45,9 @@ done
 
 file_path=${base_folder}$( date '+%Y-%m-%d_%H-%M-%S' )_screenshot.png
 import ${params} ${file_path}
+echo "${file_path}" | xclip -selection clipboard
 xclip -selection clipboard -target image/png -i < ${file_path}
-
+# xclip -selection clipboard -target text -i < ${file_path}
 if [ "$savefile" = false ] ; then
   rm ${file_path}
 fi
