@@ -1,0 +1,131 @@
+;; Kanata conversion of your KMonad config
+
+(defcfg
+  ;; Linux: intercept the same keyboard device you used in KMonad
+  linux-dev /dev/input/by-path/platform-i8042-serio-0-event-kbd
+  ;; enable if you ever bind a key to run a command via (cmd ...)
+  ;; danger-enable-cmd yes
+)
+
+;; Physical layout — mirrors your KMonad defsrc
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet left down right
+)
+
+;; Aliases (dual-role + layers)
+(defalias
+  ;; layer “jumping” (while-held)
+  lNv (tap-hold 250 250 spc (layer-while-held lNv))
+  lNm (tap-hold 250 250 a   (layer-while-held lNm))
+
+  ;; symbol layer on 'o' — hold decision on next key *release*
+  lS  (tap-hold-release 215 215 o (layer-while-held lS))
+
+  ;; home-row modifiers (decision on next key release)
+  a_r (tap-hold-release 233 233 r lalt)
+  a_i (tap-hold-release 233 233 i lalt)
+
+  c_s (tap-hold-release 233 233 s lctl)
+  c_e (tap-hold-release 233 233 e lctl)
+
+  s_n (tap-hold-release 250 250 n lsft)
+  s_t (tap-hold-release 250 250 t lsft)
+
+  m_v (tap-hold-release 233 233 v lmet)
+  m_h (tap-hold-release 233 233 h lmet)
+  m_g (tap-hold-release 233 233 g lmet)
+  m_m (tap-hold-release 233 233 m lmet)
+
+  ;; space-cadet: tap = paren, hold = Shift (decision on other-key press)
+  ;; '(' == S-9, ')' == S-0
+  lcd (tap-hold-press 215 215 S-9 lsft)
+  rcd (tap-hold-press 215 215 S-0 lsft)
+
+  ;; other dual-role (press-variant like KMonad's tap-hold-next)
+  cpl (tap-hold-press 215 215 esc  lctl)
+  bsp (tap-hold-press 215 215 bspc lmet)
+  ent (tap-hold-press 215 215 ret  rmet)
+
+  ;; layer switching
+  lUp (layer-switch lUpperCase)
+  lCk (layer-switch colemak)
+  lDf (layer-switch default)
+
+  ;; capital letter O
+  O S-o
+)
+
+;; Base layer: default
+(deflayer default
+  @lCk _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  @cpl _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _              _              _    _    _    _    _
+)
+
+;; Colemak layer (with your home-row mods)
+(deflayer colemak
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    q    w    f    p    b    j    l    u    y    ;    _    _    _
+  @cpl @lNm @a_r @c_s @s_t @m_g @m_m    @s_n @c_e @a_i @lS  _    _
+  @lcd x    c    d    @m_v z    k    @m_h _    _    _    @rcd
+  _    _    @bsp           @lNv           @ent _    _    _    _
+)
+
+;; Navigation layer
+(deflayer lNv
+  @lDf _    _    _    _    _    _    _    _    _    _     _    _
+  _    _    _    _    _    _    _    _    _    _    _     _    _    _
+  _    _    _    _    _    _    _    home pgdn pgup end   _    _    _
+  @lUp _    lalt lctl lsft _    @bsp left down up   right _    _
+  _    _    _    _    lmet _    _    @ent _    _    _     _
+  _    _    _              _              _    _     _    _    _
+)
+
+;; Numpad layer
+(deflayer lNm
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    S--  7    8    9    S-8    _    _    _
+  lctl _    lalt lmet lsft _    =    4    5    6    +    `    _
+  _    _    _    _    lctl _    -    1    2    3    \    _
+  _    _    _              0              .    _    _    _    _
+)
+
+;; Symbols layer
+(deflayer lS
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    S-1  S-2  S-[  S-]  S-\  _    _    _    _    _    _    _    _
+  _    S-1  S-2  S-[  S-]  S-\  _    _    _    _    _    _    _    _
+  _    S-3  S-4  S-9  S-0  S-7  _    apos  S-'  grave  _    _    _
+  _    S-5  S-6  [    ]    S-`  _    @ent  _    _     _    _
+  _    _    _              _         _    _    _    _    _
+)
+
+;; “UpperCase” while-held layer
+(deflayer lUpperCase
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    S-q  S-w  S-f  S-p  S-b  S-j  S-l  S-u  S-y  _  _    _    _
+  @lCk S-a    S-r    S-s    S-t    S-g    S-m    S-n    S-e    S-i    @O   _    _
+  _    S-x    S-c    S-d    S-v    S-z    S-k    S-h    _    _    _    _
+  _    _    _              _              _    _    _    _    _
+)
+
+(deflayer transparent
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _              _              _    _    _    _    _
+)
+
