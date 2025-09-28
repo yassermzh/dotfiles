@@ -53,7 +53,9 @@ window#waybar {
 #memory,
 #workspaces,
 #tray,
-#backlight {
+#backlight,
+#custom-vpn,
+#custom-tehran {
   background: #1e1e2e;
   padding: 0px 10px;
   margin: 3px 0px;
@@ -102,7 +104,6 @@ window#waybar {
 
 #network {
   color: #a6adc8;
-  border-radius: 10px 0px 0px 10px;
 }
 
 #pulseaudio {
@@ -123,4 +124,12 @@ window#waybar {
   color: #a6adc8;
   border-radius: 0px 10px 10px 0px;
   margin-right: 10px;
+}
+
+#custom-vpn.connected {
+  color: #a6e3a1; /* Green */
+}
+
+#custom-vpn.disconnected {
+  color: #eba0ac; /* Red */
 }
