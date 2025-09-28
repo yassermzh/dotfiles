@@ -29,7 +29,7 @@ floating_modifier $mod
 
 # start a terminal
 # bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+t exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -76,8 +76,8 @@ bindsym $mod+CTRL+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-# bindsym $mod+w layout tabbed
+# bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
 # bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -135,7 +135,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
@@ -217,7 +217,7 @@ set_from_resource $white1 color7 #4E4E4E
 set_from_resource $white2 color15 #ffffff
 
 # hide borders
-hide_edge_borders both
+# hide_edge_borders both
 
 # class border backgr. text indicator child_border
 client.focused 		#333333 $black2 $white2 #285577
@@ -231,10 +231,13 @@ for_window [class="Alacritty"] border pixel 1
 for_window [class="com.mitchellh.ghostty"] border none
 for_window [class="firefox"] border pixel 1
 for_window [class="zen*"] border pixel 1
-for_window [class="Google*"] border pixel 1
+# for_window [class="Google*"] border pixel 1
 
 for_window [title="Open File"] floating enable, resize set 800 600, move position center
 for_window [title="Save As"] floating enable, resize set 800 600, move position center
+for_window [title="Open"] floating enable, resize set 800 600, move position center
+for_window [title="Save File"] floating enable, resize set 800 600, move position center
+for_window [title="Select File"] floating enable, resize set 800 600, move position center
 
 # Set inner and outer gaps
 gaps inner 4px
@@ -246,8 +249,11 @@ smart_gaps on    # Only enable gaps if more than one window is open
 
 ## i3bar and i3status
 bar {
-    status_command i3status --config ~/.config/i3/i3status.conf
-    # status_command ~/.config/i3/scripts/i3status_with_lang.sh
+    # status_command i3status --config ~/.config/i3/i3status.conf
+    # run i3blocks
+    # status_command i3blocks -c ~/.config/i3/i3blocks.conf
+
+    status_command ~/.config/i3/scripts/i3status_with_lang.sh
 
     # Disable all tray icons
     tray_output none
@@ -276,13 +282,14 @@ exec --no-startup-id dunst
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 
-exec --no-startup-id clipmenud
+exec --no-startup-id env CM_DIR="$HOME/.config/local/share/clipmenu" clipmenud
 exec --no-startup-id ~/.config/local/share/gem/ruby/3.4.0/bin/fusuma -d
 
 
 exec --no-startup-id ~/.config/i3/scripts/touchpad.sh
 
-bindsym $mod+v exec clipmenu
+bindsym $mod+v exec CM_LAUNCHER=rofi CM_DIR="$HOME/.config/local/share/clipmenu" clipmenu
+# bindsym $mod+v exec clipmenu
 
 # bindsym F10 exec ~/works/nerd-dictation/nerd-dictation begin
 # bindsym F11 exec ~/works/nerd-dictation/nerd-dictation end
@@ -290,6 +297,8 @@ bindsym $mod+v exec clipmenu
 # Voice input: F10 to start recording, F11 to stop and transcribe
 bindsym F10 exec --no-startup-id ~/.config/i3/scripts/whisper.sh start
 bindsym F11 exec --no-startup-id ~/.config/i3/scripts/whisper.sh stop
+
+exec --no-startup-id xdg-desktop-portal
 
 ## Include
 include $XDG_CONFIG_HOME/i3/include/*.conf
