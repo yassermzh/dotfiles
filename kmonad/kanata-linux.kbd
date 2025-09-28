@@ -4,7 +4,7 @@
   ;; Linux: intercept the same keyboard device you used in KMonad
   linux-dev /dev/input/by-path/platform-i8042-serio-0-event-kbd
   ;; enable if you ever bind a key to run a command via (cmd ...)
-  ;; danger-enable-cmd yes
+  danger-enable-cmd yes
 )
 
 ;; Physical layout — mirrors your KMonad defsrc
@@ -51,10 +51,14 @@
   bsp (tap-hold-press 215 215 bspc lmet)
   ent (tap-hold-press 215 215 ret  rmet)
 
+  ;; OS layout switchers
+  ;;ir (cmd "setxkbmap -layout ir,us -option grp:alt_shift_toggle")
+
   ;; layer switching
   lUp (layer-switch lUpperCase)
   lCk (layer-switch colemak)
   lDf (layer-switch default)
+  ;;lPr (layer-switch persian)
 
   ;; capital letter O
   O S-o
@@ -83,7 +87,7 @@
 ;; Navigation layer
 (deflayer lNv
   @lDf _    _    _    _    _    _    _    _    _    _     _    _
-  _    _    _    _    _    _    _    _    _    _    _     _    _    _
+  _  _    _    _    _    _    _    _    _    _    _     _    _    _
   _    _    _    _    _    _    _    home pgdn pgup end   _    _    _
   @lUp _    lalt lctl lsft _    @bsp left down up   right _    _
   _    _    _    _    lmet _    _    @ent _    _    _     _
