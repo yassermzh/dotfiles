@@ -109,10 +109,11 @@ prompt_purification_setup() {
     # Display git branch
 
     autoload -Uz add-zsh-hook
-    add-zsh-hook precmd prompt_purity_precmd
+    add-zsh-hook precmd prompt_purification_setup
 
-    ZSH_THEME_GIT_PROMPT_PREFIX=" %F{yellow}λ:%f%F{blue}"
-    ZSH_THEME_GIT_PROMPT_DIRTY=""
+    ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[white]%} on %{$fg[green]%}"
+    ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
+    ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}!"
     ZSH_THEME_GIT_PROMPT_CLEAN=""
 
     ZSH_THEME_GIT_PROMPT_ADDED="%F{green}+%f "
@@ -126,8 +127,8 @@ prompt_purification_setup() {
     ZSH_THEME_GIT_PROMPT_AHEAD="%B%F{green}%f%b "
 
     prompt_git_branch
-    RPROMPT='$(prompt_git_info) $(git_prompt_status)'
-    PROMPT=$'%F{white}%~ %B%F{blue}>%f%b '
+    RPROMPT='$(prompt_git_info)'  # Removed git status call to improve prompt performance
+    PROMPT=$'%B%F{250}%~%f%b %B%F{blue}\n>%f%b '
 }
 
 prompt_purification_setup
