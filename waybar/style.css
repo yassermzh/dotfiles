@@ -46,8 +46,8 @@ window#waybar {
 
 #window,
 #clock,
-#battery,
 #pulseaudio,
+#battery,
 #network,
 #cpu,
 #memory,
@@ -121,7 +121,6 @@ window#waybar {
 }
 
 #battery {
-  color: #a6adc8;
   border-radius: 0px 10px 10px 0px;
   margin-right: 10px;
 }
