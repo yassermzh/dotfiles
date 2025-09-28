@@ -11,17 +11,25 @@ ln -s "$HOME/dotfiles/ghostty" "$HOME/.config"
 rm -rf "$HOME/.config/hypr"
 ln -s "$HOME/dotfiles/hypr" "$HOME/.config"
 
-rm -rf "$HOME/.config/local/share/applications"
-ln -s "$HOME/dotfiles/applications" "$HOME/.config/local/share"
+rm -rf "$HOME/.config/wofi"
+ln -s "$HOME/dotfiles/wofi" "$HOME/.config"
 
-rm -rf $HOME/.config/xdg-desktop-portal
-ln -s $HOME/xdg-desktop-portal $HOME/.config
+rm -rf "$HOME/.config/local/share/applications"
+ln -s "$HOME/dotfiles/applications" "$HOME/.local/share"
+
+rm -rf "$HOME/.config/xdg-desktop-portal"
+ln -s "$HOME/dotfiles/xdg-desktop-portal" "$HOME/.config"
 
 rm -rf "$HOME/.config/waybar"
 ln -s "$HOME/dotfiles/waybar" "$HOME/.config"
 
 rm -rf "$HOME/.config/alacritty"
 ln -s "$HOME/dotfiles/alacritty" "$HOME/.config"
+
+rm -rf "$HOME/.config/rofi"
+ln -s "$HOME/dotfiles/rofi" "$HOME/.config"
+
+mkdir -p ~/.local/share/clipmenu
 
 rm -rf "$HOME/.config/kmonad"
 ln -s "$HOME/dotfiles/kmonad" "$HOME/.config"
