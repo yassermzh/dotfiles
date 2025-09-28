@@ -71,3 +71,4 @@ export PATH="$N_PREFIX/bin:$PATH"
 
 export PATH="$HOME/.config/local/share/gem/ruby/3.4.0/bin:$PATH"
 
+export CM_DIR="$HOME/.config/local/share/clipmenu"
