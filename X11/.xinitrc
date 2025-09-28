@@ -1,6 +1,7 @@
 # xrandr --setprovideroutputsource modesetting NVIDIA-G0
 #xrandr --auto
 
+export XDG_CURRENT_DESKTOP=GNOME
 
 # urxvtd -o -q -f
 
