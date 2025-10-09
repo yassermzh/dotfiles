@@ -72,3 +72,24 @@ export PATH="$N_PREFIX/bin:$PATH"
 export PATH="$HOME/.config/local/share/gem/ruby/3.4.0/bin:$PATH"
 
 export CM_DIR="$HOME/.config/local/share/clipmenu"
+
+# Use fzf for Ctrl+R history search
+fzf-history-widget() {
+  BUFFER=$(fc -ln -r -5000 | fzf --height 40% --reverse --inline-info \
+    --no-sort --query="$LBUFFER" --preview 'echo {}' --preview-window=up:3:wrap)
+  CURSOR=$#BUFFER
+  zle reset-prompt
+}
+
+zle     -N   fzf-history-widget
+bindkey '^R' fzf-history-widget
+
+eval "$(zoxide init zsh)"
+
+fzf-git-checkout() {
+  git branch --all | grep -v HEAD | fzf | xargs git checkout
+}
+zle     -N   fzf-history-widget
+bindkey '^G' fzf-git-checkout
+
+
