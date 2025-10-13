@@ -7,7 +7,7 @@
   "gtk-layer-shell": true,
   "height": 0,
   "modules-left": ["hyprland/workspaces"],
-  // "modules-center": ["clock"],
+  "modules-center": ["custom/keyboard", "clock"],
   "modules-right": [
     "tray",
     "pulseaudio",
@@ -19,19 +19,18 @@
     // "backlight",
     "cpu",
     "custom/tehran",
-    "clock"
   ],
 
   "hyprland/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
-    "on-click": "activate"
+    "on-click": "activate",
     //"format": "{icon}",
   },
 
   "tray": {
     "icon-size": 13,
-    "spacing": 10
+    "spacing": 10,
   },
 
   "clock": {
@@ -48,9 +47,9 @@
         "months": "<span color='#a6adc8'><b>{}</b></span>",
         "weekdays": "<span color='#a6adc8'><b>{}</b></span>",
         "today": "<span color='#a6adc8'><b>{}</b></span>",
-        "days": "<span color='#555869'><b>{}</b></span>"
-      }
-    }
+        "days": "<span color='#555869'><b>{}</b></span>",
+      },
+    },
   },
 
   "custom/tehran": {
@@ -58,7 +57,7 @@
     "exec": "TZ='Asia/Tehran' date +'%H:%M'",
     "interval": 1,
     "tooltip": false, // Disable tooltip if not needed
-    "rotate": 0
+    "rotate": 0,
   },
 
   "backlight": {
@@ -67,7 +66,7 @@
     "format-icons": ["󰃞", "󰃟", "󰃠"],
     "on-scroll-up": "brightnessctl set 1%+",
     "on-scroll-down": "brightnessctl set 1%-",
-    "min-length": 6
+    "min-length": 6,
   },
 
   "battery": {
@@ -77,11 +76,9 @@
     "format": "{icon} {capacity}%",
     "format-charging": " {icon} {capacity}%",
     "format-full": "  {capacity}%",
-    "format-icons": [
-      "", "", "", "", ""
-    ],
+    "format-icons": ["", "", "", "", ""],
     "tooltip-format": "Battery: {capacity}%",
-    "on-click": "/home/yas/dotfiles/waybar/scripts/battery-status.sh"
+    "on-click": "/home/yas/dotfiles/waybar/scripts/battery-status.sh",
   },
 
   "pulseaudio": {
@@ -99,8 +96,8 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": ["", "", "", ""]
-    }
+      "default": ["", "", "", ""],
+    },
   },
 
   "pulseaudio#microphone": {
@@ -110,14 +107,14 @@
     "on-click": "pamixer --default-source -t",
     "on-scroll-up": "pamixer --default-source -i 5",
     "on-scroll-down": "pamixer --default-source -d 5",
-    "scroll-step": 5
+    "scroll-step": 5,
   },
 
   "memory": {
     "states": {
       "c": 90, // critical
       "h": 60, // high
-      "m": 30 // medium
+      "m": 30, // medium
     },
     "interval": 10,
     "format": "󰾆 {used}GB",
@@ -127,7 +124,7 @@
     "format-alt": "󰾆 {percentage}%",
     "max-length": 10,
     "tooltip": true,
-    "tooltip-format": "󰾆 {percentage}%\n {used:0.1f}GB/{total:0.1f}GB"
+    "tooltip-format": "󰾆 {percentage}%\n {used:0.1f}GB/{total:0.1f}GB",
   },
 
   "custom/vpn": {
@@ -135,14 +132,24 @@
     "exec": "/home/yas/dotfiles/waybar/scripts/vpn-check.sh",
     "return-type": "json",
     "interval": 5,
-    "tooltip": true
+    "tooltip": true,
   },
 
   "cpu": {
     "interval": 10,
     "format": "󰍛 {usage}%",
     "format-alt": "{icon0}{icon1}{icon2}{icon3}",
-    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
+    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+  },
+
+  "custom/keyboard": {
+    "format": "{}",
+    "exec": "/home/yas/dotfiles/waybar/scripts/keyboard-layout.sh",
+    "return-type": "json",
+    "interval": 1,
+    "tooltip": true,
+    "on-click": "/home/yas/dotfiles/waybar/scripts/keyboard-layout.sh debug",
+    "on-click-right": "/home/yas/dotfiles/waybar/scripts/keyboard-layout.sh debug",
   },
 
   "network": {
@@ -154,6 +161,6 @@
     "format-disconnected": "󰖪 ",
     "tooltip-format-disconnected": "Disconnected",
     "format-alt": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
-    "interval": 2
-  }
+    "interval": 2,
+  },
 }
