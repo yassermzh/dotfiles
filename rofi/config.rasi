@@ -1,0 +1,9 @@
+configuration {
+
+  show-icons: true;
+
+  icon-size: 320;
+
+  dpi: 115;
+
+}
