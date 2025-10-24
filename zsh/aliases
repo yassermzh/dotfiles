@@ -16,10 +16,23 @@ alias set-dns="resolvectl dns wlp0s20f3 8.8.8.8"
 # show dns info: resolvectl dns"
 
 function k() {
-  # sudo kmonad ~/.config/kmonad/linux.kbd &
-  sudo ~/.cargo/bin/kanata -c ~/dotfiles/kmonad/kanata-linux.kbd 
+  # Kill any existing kanata processes and log monitors
+  sudo pkill -f "kanata.*kanata-linux.kbd" 2>/dev/null
+  pkill -f "kanata-layer-from-log.sh.*monitor" 2>/dev/null
+
+  # Create log directory if it doesn't exist
+  mkdir -p ~/.config/cache
+
+  # Start kanata with logging
+  echo "Starting kanata with logging to ~/.config/cache/kanata.log..."
+  sudo ~/.cargo/bin/kanata -c ~/dotfiles/kmonad/kanata-linux.kbd 2>&1 | tee ~/.config/cache/kanata.log &
+
+  # Start the layer monitor in background
+  ~/dotfiles/waybar/scripts/kanata-layer-from-log.sh monitor &
+
   sleep 5
   setxkbmap -layout us,ir -option grp:alt_shift_toggle
+  echo "Kanata started with layer monitoring"
 }
 
 function reset-kb() {
